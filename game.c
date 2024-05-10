@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 //contributors
 //
 
@@ -8,6 +17,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <unistd.h>
+
+void challenge();
 
 int main(int argc, char *argv[])
 {
@@ -134,6 +145,7 @@ int main(int argc, char *argv[])
 			case 21:
 			{
 				puts("room21");
+        challenge();
 				break;
 			}
 			case 22:
@@ -321,26 +333,43 @@ int main(int argc, char *argv[])
 	return EXIT_SUCCESS;
 }
 
+void challenge()
+{
+
+    char options[][20] = { "Ogre", "Golem", "Lich", "Penguin", "Snake" };
+
+    srand(time(NULL));
+    int randy = rand() % 3;
+
+    int n = 7;
+
+    printf("Welcome you have been left unarmed at the begining of a series of chambers and must make it to the end while avoiding the evil creatures.\n");
 
 
+    for (int i = 0; i < 2; i++)
+    {
+
+        randy = rand() % 3;
+
+        printf("So please make your choice between rooms 1-5: \n");
+        scanf("%d", &n);
+
+        if (randy % 3 != 0)
+        {
+            printf("You have escaped unnoticed by the %s\n", options[n - 1]);
+
+        }
+        else
+        {
+            printf("You were mauled to death by %s and respawned at the begining\n", options[n - 1]);
+            i = -1;
+        }
+
+    }
+    printf("Congratulations you have made it out of the room\n");
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
