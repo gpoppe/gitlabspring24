@@ -26,7 +26,7 @@
 
 
 //AK
-
+// Basilio L.
 
 
 //Carlos
@@ -45,7 +45,12 @@
 #include <unistd.h>
 #include <math.h>
 
+
 void doorChoiceRoom9();
+
+
+int i_want_to_go_home_grandpa();
+void func37();
 
 void exploreRoom(int roomNo);
 void eyeGame(void);
@@ -596,7 +601,26 @@ while (choice != 0)
 			case 7:
 			{
 				puts("room7");
-				break;
+        int options [] = {1, 3, 4 ,5, 2};
+        // int size = sizeof(rooms) / sizeof(rooms[0]);
+        int size = 5;
+
+        srand(time(NULL));
+        int r = rand() % size;
+
+        int sum = r;
+        printf("\nInitial Sum = %d",r);
+
+        while(sum != 10){
+            if(sum > 10)
+                sum = 0;
+            sum += options[i_want_to_go_home_grandpa()];
+            printf("\nCurrent Sum = %d", sum);
+          }
+        puts("\n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \n");
+        puts("      Indeed... Funkos are the best!");
+        puts("\n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ");
+        break;
 			}
 			case 8:
 			{
@@ -3023,8 +3047,88 @@ while (choice != 0)
 
       case 37:
       {
-        puts("room37");
-        break;
+        int c = 0;
+	int r;
+	int rgb[3];//0,red 1,green 2,blue
+	puts("room37");
+	puts("You have entered the scary door.");
+	
+	while(c != 6)
+	{
+		puts("There are 5 items lying in front of you:");
+		puts("1: speedy socks");
+		puts("2: infinite water bucket");
+		puts("3: a lemon");
+		puts("4: half baked cake");
+		puts("5: bag of marbles");
+		puts("6: leave room...");
+
+		scanf("%d", &c);
+		printf("\nyou chose: %d\n",c);
+
+		if(c == 1)
+		{
+			puts("You can now run very fast, but only in room37.");
+		}
+		else if(c == 2)
+		{
+			puts("You have a bucket of water, use it infinitely, but once you leave room37, the bucket disapears");
+		}
+		else if(c == 3)
+		{
+			puts("You have received a lemon.");
+			puts("Would you like to eat the lemon? 1 yes, 2 no");
+			int a;
+			scanf("%d",&a);
+			if(a == 1)
+			{
+				func37();
+				puts("You hear something off in the distance, but choose to cover your ears...");
+				puts("A lemon sprouts from the ground magically");
+			}
+			else
+			{
+				puts("You tossed the lemon away.");
+			}
+		}
+		else if(c == 4)
+		{
+			puts("You havea a baked cake now.");
+			puts("Would you like to eat it? 1 yes, 2 no");
+			int b;
+			scanf("%d",&b);
+			if(b==1)
+			{
+				puts("You ate the cake, tummy is filled :)\n another cake reappears");
+			}
+			else
+			{
+				puts("You placed the cake on floor.");
+			}
+		}
+		else if(c == 5)
+		{
+			srand(time(NULL));
+			r = rand();
+			while(r%3 != 0)
+			{
+				r = rand()%1000;
+			}
+			rgb[0] = r/3;
+			rgb[1] = r/3;
+			rgb[2] = r/3;
+			printf("You got %d marbles!!!\n",r);
+			printf("red marbles: %d\n",rgb[0]);
+			printf("green marbles: %d\n",rgb[1]);
+			printf("blue marbles: %d\n",rgb[2]);
+			puts("another bag of marble reappears");
+		}
+		else
+		{
+			break;//back to menu
+		}
+	}
+	break;
       }
 
 			case 38:
@@ -7164,3 +7268,65 @@ void doorChoiceRoom9()
 		        puts("Spikes emerge from circular holes in the ceiling, you have to decide on one of five doors in order to escape the death trap.");
 			    
 }
+
+void func37()
+{
+	puts("Executing Order 66!!!");
+}
+
+int i_want_to_go_home_grandpa(){
+    puts("\n1: Do you want to feed the Jason?\
+            \n2: Don't feed Jason.\
+            \n3: Did he really say McDonalds better than Jack'n Box?\
+            \n4: Funkos are the best!\
+            \n5: Deku says Jason is cool!\n");
+
+    int choice = 0;
+    scanf("\n%d: ", &choice);
+
+    if (choice == 1)
+    {
+        puts(  "\nWell well well... \
+                \nLooks like we got a loop going on here... \
+                \nWhat will you do next?\
+                \n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ");
+        return 0;
+    }
+    else if (choice == 2)
+    {
+        puts(  "\nWell well well... \
+                \nLooks like we got a loop going on here... \
+                \nWhat will you do next?\
+                \n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ");
+        return 1;
+    }
+    else if (choice == 3)
+    {
+        puts(  "\nWell well well... \
+                \nLooks like we got a loop going on here... \
+                \nWhat will you do next?\
+                \n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ");
+        return 2;
+    }
+    else if (choice == 4)
+    {
+        puts(  "\nWell well well... \
+                \nLooks like we got a loop going on here... \
+                \nWhat will you do next?\
+                \n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ");
+        return 3;
+    }
+    else if (choice == 5)
+    {
+        puts(  "\nWell well well... \
+                \nLooks like we got a loop going on here... \
+                \nWhat will you do next?\
+                \n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ");
+        return 4;
+    }
+    return 10;
+}
+
+
+
+
