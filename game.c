@@ -29,6 +29,9 @@ void rollTheDice_Race();
 
 void FinalArea(int level);
 bool trap_d10();
+double areaRec(int len, int h);
+double areaT(int b, int h);
+int factorial(int n);
 
 int main(int argc, char *argv[])
 {
@@ -1136,7 +1139,27 @@ bool trap_d10()
 }
 
 
+double areaRec(int len, int h){
 
+    return (double) len * h;
+}
+
+double areaT(int b, int h){
+
+	double area = (double) (b * h)/2;
+	return area;
+}
+
+int factorial(int n){
+    
+    int num = 1;
+    
+    for (int i = 1; i <= n; i++) {
+        num *= i;
+    }
+    
+    return num;
+}
 
 
 
