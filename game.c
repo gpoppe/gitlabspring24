@@ -26,7 +26,7 @@
 
 
 //AK
-
+// Basilio L.
 
 
 //Carlos
@@ -45,7 +45,7 @@
 #include <unistd.h>
 #include <math.h>
 
-
+int i_want_to_go_home_grandpa();
 void func37();
 void exploreRoom(int roomNo);
 void eyeGame(void);
@@ -596,7 +596,26 @@ while (choice != 0)
 			case 7:
 			{
 				puts("room7");
-				break;
+        int options [] = {1, 3, 4 ,5, 2};
+        // int size = sizeof(rooms) / sizeof(rooms[0]);
+        int size = 5;
+
+        srand(time(NULL));
+        int r = rand() % size;
+
+        int sum = r;
+        printf("\nInitial Sum = %d",r);
+
+        while(sum != 10){
+            if(sum > 10)
+                sum = 0;
+            sum += options[i_want_to_go_home_grandpa()];
+            printf("\nCurrent Sum = %d", sum);
+          }
+        puts("\n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \n");
+        puts("      Indeed... Funkos are the best!");
+        puts("\n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ");
+        break;
 			}
 			case 8:
 			{
@@ -7032,3 +7051,60 @@ void func37()
 {
 	puts("Executing Order 66!!!");
 }
+
+int i_want_to_go_home_grandpa(){
+    puts("\n1: Do you want to feed the Jason?\
+            \n2: Don't feed Jason.\
+            \n3: Did he really say McDonalds better than Jack'n Box?\
+            \n4: Funkos are the best!\
+            \n5: Deku says Jason is cool!\n");
+
+    int choice = 0;
+    scanf("\n%d: ", &choice);
+
+    if (choice == 1)
+    {
+        puts(  "\nWell well well... \
+                \nLooks like we got a loop going on here... \
+                \nWhat will you do next?\
+                \n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ");
+        return 0;
+    }
+    else if (choice == 2)
+    {
+        puts(  "\nWell well well... \
+                \nLooks like we got a loop going on here... \
+                \nWhat will you do next?\
+                \n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ");
+        return 1;
+    }
+    else if (choice == 3)
+    {
+        puts(  "\nWell well well... \
+                \nLooks like we got a loop going on here... \
+                \nWhat will you do next?\
+                \n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ");
+        return 2;
+    }
+    else if (choice == 4)
+    {
+        puts(  "\nWell well well... \
+                \nLooks like we got a loop going on here... \
+                \nWhat will you do next?\
+                \n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ");
+        return 3;
+    }
+    else if (choice == 5)
+    {
+        puts(  "\nWell well well... \
+                \nLooks like we got a loop going on here... \
+                \nWhat will you do next?\
+                \n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ");
+        return 4;
+    }
+    return 10;
+}
+
+
+
+
