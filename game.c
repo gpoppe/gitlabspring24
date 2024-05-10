@@ -330,7 +330,7 @@ int main(int argc, char *argv[])
 				printf("Option 2: Given the length of a rectangle. You will have to enter the height\n and the area has to be within a percentage of a specific number. \n");
 				printf("Option 3: Given the base of a triangle. You will have to enter the height\n and the area has to be within a percentage of a specific number. \n");
 				printf("Option 4: Solve 3 factorials \n");
-				printf(" Option 5: Guess a number (LAME :v) \n");
+				printf(" Option 5: Roll the dice until you get the magic number. \n");
 				printf("Enter your choice a number from 1-5: \n");
 				scanf("%d", &choice);
 				while(choice < 1 && choice > 5){
