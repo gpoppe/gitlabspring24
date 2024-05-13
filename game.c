@@ -2237,6 +2237,10 @@ while (choice != 0)
 			case 27:
 			{
 				puts("room27");
+
+
+
+				//samuel
 				break;
 			}
 			case 28:
