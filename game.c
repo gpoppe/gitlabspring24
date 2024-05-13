@@ -45,7 +45,7 @@
 #include <unistd.h>
 #include <math.h>
 
-
+void buildB();
 void doorChoiceRoom9();
 
 
@@ -2228,8 +2228,59 @@ printf("");
 			case 25:
 			{
 				puts("room25");
-				//Katy H 
+				
+				int option = 0;
+				//Katy H
+			printf("-----------------------------------------------------------------------------\n");
+				printf("You entered to a different dimension with giant flowers 🌺 and floating platforms,");
+		                printf("suddenly you look down and realize there is a cliff with a pink dragon 🐲 at the bottom");
+			        printf(" ; but in a floating island you see a treasure chest.");		        
+		                 printf("You are scared of falling into the dragon's mouth,however, you see a knight offering some");
+				printf(" help to cross around \n");
+			printf("\n");	
+
+				 printf("Press 1 to accept the knight's help \n");
+				 printf("Press 2 to cross by yourself with the risk of falling \n");
+				 printf("Press 3 to go back and give up \n");
+				 printf("Press 4 to build a bridge with the big flowers \n");
+				 printf("Press 5 to betray the knight 😈 and throw him at the dragon as a distraction in case you fall >:) \n");
+				 
+				 
+				 scanf("%d",&option);
+
+				 if(option == 1)
+				 {
+					 printf("Sorry, he was evil and he used you as food for the dragon :) ☠️ \n");
+				 }
+				 else if(option == 2)
+				 {
+                                     printf("Sorry you fell and died :) ☠️ \n");
+
+				 }
+				 else if(option == 3)
+				 {
+					 printf("you decide to go back :D !\n");
+				 }
+
+				 else if (option == 4)
+				 {
+					 buildB(); 
+					 printf("Sorry ,this isn't minecraft, your skills at construction suck and you fell and died  :) ☠️ \n");
+				 
+				 }
+
+				 else if (option == 5)
+				 {
+					  printf("The dragon eats the knight and you jump to the treasure to realize It's cursed and you die from karma and now you are a ghost :); you decided to go back to the other doors as a ghost ☠️  \n");
+
+				 }
+
+
+
 				break;
+
+
+
 			}
 			case 26:
 			{
@@ -5129,7 +5180,61 @@ void room49()
 }
 
 
+//Katy H , room25 function 
+void buildB()
+{
+        srand(time(NULL));
+  printf("You obtained a random number of stems , petals and roots to build a bridge \n");
+        int stems = rand()%10;
+        int petals = rand()%10;
+        int roots = rand()%10;;
 
+printf("stems: %d \n" ,stems);
+printf("petals: %d \n", petals);
+printf("roots: %d \n", roots);
+
+int materials[] ={2 , 3, 7};
+int numOfmaterials= 0;
+for (int i = 0 ; i <= 3 ; i++ )
+{
+    numOfmaterials =+ materials[i];
+
+    if(i == 0)
+    {
+            numOfmaterials = materials[i];
+    }
+    else if (i==1)
+    {
+            numOfmaterials =+ materials[i];
+    }
+    else if (i==2)
+    {
+            numOfmaterials =+ materials[i];
+            break;
+    }
+
+    else if (i == 3)
+    {
+            break;
+    }
+}
+
+printf("you also got this number of rocks for the bridge: %d \n" ,numOfmaterials);
+
+printf("Now you have the following item : \n");
+printf("POORLY MADE BRIDGE \n");
+printf("\n");
+
+printf("  'x|`\n");
+printf(" |xx|             |x|\n");
+printf(" |xx|    `   '    |x|`\n");
+printf(" |xx|             |x|\n");
+printf("============|===============|\n");
+printf("~|xx|~~~~~~~~~~~~~|x|~~~ ~~~\n");
+
+printf("\n");
+
+}
 
 
 
