@@ -848,6 +848,7 @@ while (choice != 0)
 				int x = 0;
 				printf("\n Which path will you take?: \n\n");
 				scanf(" %d",&x);
+printf("");
 				while(x == 1)
 				{
 					printf("\n Gardens \n\n");
@@ -2227,6 +2228,7 @@ while (choice != 0)
 			case 25:
 			{
 				puts("room25");
+				//Katy H 
 				break;
 			}
 			case 26:
