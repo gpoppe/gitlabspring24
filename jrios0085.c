@@ -251,5 +251,5 @@ default:
 }
 
 Puts("Game is over, try again next time");
-return;
+return EXIT_SUCESS;
 }	
