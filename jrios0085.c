@@ -220,4 +220,36 @@ while (getchar() != '\n');
 printf("\nending 5\n"); 
 while (getchar() != '\n');
 
-break;	
+break;
+
+}
+case 7:
+{
+
+puts("\nyou quit the game, you had enough of these shenanigans\n");
+while (getchar() != '\n');
+
+printf("\nEnding 6\n"); 
+while (getchar() != '\n');
+
+break;
+
+}
+case 8:
+{
+
+puts("error room teleport");
+
+printf("\nyou reached the error room, how did you reach it?
+	nonetheless this is a celebrating\n"); 
+while (getchar() != '\n');
+break;
+}
+default:
+{
+	puts("invalid choice, try again")
+}
+
+Puts("Game is over, try again next time");
+return;
+}	
