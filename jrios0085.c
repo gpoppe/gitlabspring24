@@ -69,3 +69,52 @@ while (getchar() != '\n');
 printf("\n you died in your sleep as some monsters killed you while you were sleeping\n");
 while (getchar() != '\n');
 break;
+
+}
+case 3:
+{
+
+puts("\nyou went left of the swamp\n"); 
+while (getchar() != '\n');
+
+printf("\nythere is a monster in your way\n"); 
+while (getchar() != '\n');
+
+printf("\nyyou hide in the bushes before it can see you\n"); 
+while (getchar() != '\n');
+
+printf("\nwhile in the bushes you peek on the monster that you were
+	afraid of and decided to write down what you saw in yourself
+	notebook\n"); 
+while (getchar() != '\n');
+
+printf("\nthe monster was a giant behemoth and when he walks
+	almost knocking down mountains with just his stomps alone\n"); 
+while (getchar() != '\n');
+
+printf("\nthe monster is also very vile as it sees a crocodile
+	just walking in their little feet
+	the monster runs at the crocodile and snaps it in two\n"); 
+while (getchar() != '\n');
+
+printf("\nyou panicked but you didn't let your nerves take control of you\n"); 
+while (getchar() != '\n');
+
+printf("\n once the coast was clear you went furthur deep into the swamp dungeon\n"); 
+while (getchar() != '\n');
+
+printf("\nafter some time going forward and hiding from the nearby monsters 
+	as well as from the local animals that have not yet noticed your presence\n"); 
+while (getchar() != '\n');
+
+printf("\nyou see what looks to be a portal to the exit\n"); 
+while (getchar() != '\n');
+
+printf("\nyou take the exit and you esxaped the dungeon\n"); 
+while (getchar() != '\n');
+
+printf("\nEnding 2\n"); 
+while (getchar() != '\n');
+break;
+
+}
