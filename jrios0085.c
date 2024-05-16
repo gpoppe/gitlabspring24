@@ -690,12 +690,14 @@ break;
 			}
 			default:
 			{
+			{	
 
+			
 				puts("invalid choice");
 			}
 		}
 	}
 	puts("Game Over");
 	return EXIT_SUCCESS;
-{
+
 } 
