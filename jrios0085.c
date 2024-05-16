@@ -184,5 +184,40 @@ while (getchar() != '\n');
 printf("\nending 4\n"); 
 while (getchar() != '\n');
 break;
+}
+case 6: 
+{
+	puts("\nyou went right side of the swamp, how very daring\n");
+	
+while (getchar() != '\n');
 
-}	
+printf("\n after some time going right you encounter a dog in the swamp\n");
+while (getchar() != '\n');
+
+printf("\n you decided to take it with you in your journey to keep you company\n");
+while (getchar() != '\n');
+
+printf("\nunknown to you however is that the dog was a mutated monster\n");
+while (getchar() != '\n');
+
+printf("\nin the end it was too late, the dog lashed at your neck, snapping it like nothing\n");
+
+while (getchar() != '\n');
+
+ printf("\nyou lay there in the swamp motionless as you have flashes of what could have been\n");
+
+while (getchar() != '\n');
+
+printf("\n you see visions of your family and after a while you were just another dead wizard\n");
+
+while (getchar() != '\n');
+
+
+printf("\n your journey is over \n");
+
+while (getchar() != '\n');
+
+printf("\nending 5\n"); 
+while (getchar() != '\n');
+
+break;	
