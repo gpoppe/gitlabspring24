@@ -144,3 +144,22 @@ printf("\nthe monster is also very vile as it sees a crocodile
 	just walking in their little feet
 	the monster runs at the crocodile and snaps it in two\n"); 
 while (getchar() != '\n');
+printf("\nyou panicked so much that the monster spotted you\n"); 
+while (getchar() != '\n');
+
+printf("\nthe monster first crushed your skull in with one punch\n"); 
+while (getchar() != '\n');
+
+printf("\nyou lay on the floor pulverized and dead\n"); 
+while (getchar() != '\n');
+
+printf("\this is the end of your story\n"); 
+while (getchar() != '\n');
+
+printf("\nEnding 3\n"); 
+while (getchar() != '\n');
+
+break;
+
+}
+case 5:
