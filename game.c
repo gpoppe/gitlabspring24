@@ -108,7 +108,8 @@ int main(int argc, char *argv[])
     printf("You have entered a mystical realm filled with wonder and magic.\n");
     printf("What path will you choose?\n");
 }
-int main() {
+int main()
+{
     srand(time(NULL));
   int choice;
     int gameOver = 0;
