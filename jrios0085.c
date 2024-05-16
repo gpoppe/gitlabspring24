@@ -246,21 +246,74 @@ case 4:
 puts("\n you walk back to the castle\n"); 
 while (getchar() != '\n');
 
-printf("\n from there you meet up with a knight who just so happened
-	to be traveling to the same dungeon you were at\n"); 
+printf("from there you meet up with a knight who just so happened
+	to be traveling to the same swamp you were at"); 
 while (getchar() != '\n');
 
-printf("\nsoon you went to the swamp with companion in tow\n");
+printf("soon you went to the swamp with companion in tow");
 while (getchar() != '\n');
 
-printf("\neventally you both went all the way to the end
-	of the dungeon and got enough loot to buy a castle
-	of your own\n");
+printf("eventally you both went all the way to the end
+	of the swamp and were able to reach the next city");
 
 while (getchar() != '\n');
 
-printf("\nending 4\n"); 
+printf("from there you and the knight parted ways but before you both said your goodbyes, the knight gave you a proposition"); 
 while (getchar() != '\n');
+
+printf("the knight says that they will flip a coin and if its heads he will continue the quest with you but if its tails he will give you a potion that will be useful in your journey
+to beating the game"); 
+while (getchar() != '\n');
+
+void ajlSpace()
+{
+    while (getchar() != '\n')
+        ;
+}
+
+void coinFlip() {
+  int call = 0;
+
+  printf("You know the rules and so Do I : call heads{1} or tails{2}: ");
+  scanf("%d", &call);
+    
+  if (call == 1 || call == 2) {
+    printf("The coin from above flips!\n");
+    
+  }
+  else 
+  {
+    printf("You call an invalid number, the game will call instead since you were being a bit cheeky!\n");
+    call = (rand() % 2) + 1;
+    
+    if (call == 1){
+      printf("Luck was not on your side Fellow Traveler!\n");
+    }
+    else
+     {
+      printf("You got a companion\n");
+    }
+  }
+
+    int coin = (rand() % 2) + 1;
+
+  if (coin == 1 && call == 1) {
+    printf("\nIt's heads, what luck!\n");
+  }
+  else if (coin == 1 && call == 2) {
+    printf("It's heads., the knight agrees to his bizarre proposition and continues the journey as your companion");
+  }
+  else if (coin == 2 && call == 1) {
+    printf("It's tails. well can't win them all, Too bad!\n");
+  }
+  else if (coin == 2 && call == 2) {
+    printf("It's tails!, the knight gives you the potion of the cowboy reaper, a potion so cool that it will surly come in handy some time !\n");
+  }
+  
+printf("eventally you both said your goodbyes and you continued your journey");
+
+while (getchar() != '\n');
+
 break;
 }
 case 5: 
@@ -269,7 +322,7 @@ case 5:
 	
 while (getchar() != '\n');
 
-printf("\n after some time going right you encounter a dog in the swamp\n");
+printf(" after some time going right you encounter a dog in the swamp");
 while (getchar() != '\n');
 
 printf("\n you decided to take it with you in your journey to keep you company\n");
