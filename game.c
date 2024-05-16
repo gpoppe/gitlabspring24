@@ -45,6 +45,8 @@
 #include <unistd.h>
 #include <math.h>
 
+void exploreRoom8(int roomNumber);
+void displayMenu();
 
 void doorChoiceRoom9();
 
@@ -625,11 +627,36 @@ while (choice != 0)
 			case 8:
 			{
 				puts("room8");
-				case 1:
-				case 2:
-				case 3:
-				case 4:
-				case 5:
+				int choice =0;
+				char name[30] = "bob";
+				srand(time(NULL));
+				printf("Pleas enter your name: ");
+				scanf("%s", name);
+				printf("Hello %s welcome to the RPG game!\n", name);
+				while(choice !=99)
+				{
+					 puts("You find yourself in a dark room and you are not sure how you got here.");
+               				 puts("As you look around you see the room has 55 doors, each labeled with a number.");
+               				 puts("The room starts filling with water and you must choose a door to open or you will likely drown. you may quit anytime by selecting option 99.");
+               				 puts("What door do you choose?");
+               				 scanf("%d",&choice);
+
+					 switch(choice)
+					 {
+						case 1:
+						case 2:
+						case 3: 
+						case 4:
+						case 5:
+						exploreRoom8(choice);
+						break;
+						case 99:
+						printf("Exiting the game");
+						break;
+						default:
+						printf("Invalid choice");
+				 	 }
+				}
 
 				break;
 			}
@@ -7335,4 +7362,121 @@ int i_want_to_go_home_grandpa(){
 
 
 
+void exploreRoom8(int roomNumber) {
+    printf("\nEntering room %d\n", roomNumber);
+    int action;
+
+    switch (roomNumber) {
+        case 1:
+            printf("You enter a room filled with exotic birds.\n");
+            printf("Choose your action: 1. Feed them, 2. Observe them, 3. Catch one, 4. Sing to them, 5. Leave quietly\n");
+            scanf("%d", &action);
+            switch (action) {
+                case 1:
+                    printf("The birds flock to you, leaving behind a shiny key!\n");
+                    break;
+                case 2:
+                    printf("You enjoy the peaceful moment and feel rejuvenated!\n");
+                    break;
+                case 3:
+                    printf("The birds scatter and you leave empty-handed.\n");
+                    break;
+                case 4:
+                    printf("They sing back, revealing a hidden passage!\n");
+                    break;
+                case 5:
+                    printf("You leave the room as you found it.\n");
+                    break;
+            }
+            break;
+        case 2:
+            printf("You enter a chamber of mirrors.\n");
+            printf("Choose your action: 1. Look into a mirror, 2. Break a mirror, 3. Rearrange the mirrors, 4. Search behind the mirrors, 5. Leave immediately\n");
+            scanf("%d", &action);
+            switch (action) {
+                case 1:
+                    printf("You see your future and gain wisdom!\n");
+                    break;
+                case 2:
+                    printf("A spirit is released, cursing you!\n");
+                    break;
+                case 3:
+                    printf("The light reflects to show a hidden door!\n");
+                    break;
+                case 4:
+                    printf("You find a hidden treasure chest!\n");
+                    break;
+                case 5:
+                    printf("You feel a chill as you quickly exit.\n");
+                    break;
+            }
+            break;
+        case 3:
+            printf("You find yourself in a room with a giant chessboard.\n");
+            printf("Choose your action: 1. Play a game, 2. Move a knight, 3. Sit and think, 4. Rearrange the pieces, 5. Leave the board\n");
+            scanf("%d", &action);
+            switch (action) {
+                case 1:
+                    printf("You outsmart the magical opponent and win a crown!\n");
+                    break;
+                case 2:
+                    printf("Moving the knight opens a secret drawer with a map!\n");
+                    break;
+                case 3:
+                    printf("You contemplate deeply, gaining insight!\n");
+                    break;
+                case 4:
+                    printf("Rearranging the pieces triggers a trapdoor!\n");
+                    break;
+                case 5:
+                    printf("You step away from the game, unchanged.\n");
+                    break;
+            }
+            break;
+        case 4:
+            printf("You enter a dimly lit laboratory.\n");
+            printf("Choose your action: 1. Mix potions, 2. Read the notes, 3. Use the microscope, 4. Ignite the Bunsen burner, 5. Leave quietly\n");
+            scanf("%d", &action);
+            switch (action) {
+                case 1:
+                    printf("You create a healing potion!\n");
+                    break;
+                case 2:
+                    printf("You learn a secret of the philosopher's stone!\n");
+                    break;
+                case 3:
+                    printf("You discover a new bacteria!\n");
+                    break;
+                case 4:
+                    printf("The flame reveals a hidden safe!\n");
+                    break;
+                case 5:
+                    printf("You leave the lab untouched.\n");
+                    break;
+            }
+            break;
+        case 5:
+            printf("You enter a serene garden.\n");
+            printf("Choose your action: 1. Water the plants, 2. Rest by the fountain, 3. Pick a flower, 4. Meditate, 5. Walk along the path\n");
+            scanf("%d", &action);
+            switch (action) {
+                case 1:
+                    printf("The plants grow instantly, revealing a key!\n");
+                    break;
+                case 2:
+                    printf("The soothing water restores your health!\n");
+                    break;
+                case 3:
+                    printf("You find a rare and valuable blossom!\n");
+                    break;
+                case 4:
+                    printf("Meditation enlightens you, boosting your wisdom!\n");
+                    break;
+                case 5:
+                    printf("The path leads you to a hidden gate!\n");
+                    break;
+            }
+            break;
+    }
+}
 
