@@ -14,7 +14,7 @@
 {
 puts("room8");
 	int choice = 0;
-				char playerName[6];
+				char playerName[9];
 				srand(time(NULL));
 				    
 				printf("Please enter your player name: ");
@@ -33,9 +33,9 @@ while(choice != 7)
 {
 puts("\nyou are in the swampy side of the kingdom")
 puts("nonetheless you bare your wits since you are the one true traveler")
-puts("that side of castle is wide but smelly and is filled with corpses but")
-puts("it is also filled with traps, portals to other rooms and loot")
-puts("you have 8 choices think wisely on what you want to do")
+puts("that side of kingdom is wide but smelly and is filled with corpses but")
+puts("it is also filled with monsters, portals to other rooms and loot")
+puts("you have 7 choices think wisely on what you want to do")
 puts("|1: go straight,|2: stay put, because why not|3: go left,|4: go back to the path you were in before, |5: go right,| 6: exit the game in case you are tired of this adventure| 7: 
 secret route  )
 scanf("%d",&choice);
@@ -44,7 +44,7 @@ switch(choice)
 {
 case 1:
 {
-puts("\n|you went forward|\n");
+puts("\nyou went forward\n");
 while (getchar() != '\n');
 
 printf("you walk forward to the swamp");
@@ -101,16 +101,16 @@ void coinFlip() {
     int coin = (rand() % 2) + 1;
 
   if (coin == 1 && call == 1) {
-    printf("It's heads, what luck, you found something valuable!\n");
+    printf("\nIt's heads, what luck, you found something valuable\n");
   }
   else if (coin == 1 && call == 2) {
-    printf("It's heads.,what you got from the beaurcrat is the coin of Bulk Bogan.\n");
+    printf("\nIt's heads.,what you got from the beaurcrat is the coin of Bulk Bogan.\n");
   }
   else if (coin == 2 && call == 1) {
-    printf("It's tails. well can't win them all, Too bad!\n");
+    printf("\nIt's tails. well can't win them all, Too bad!\n");
   }
   else if (coin == 2 && call == 2) {
-    printf("It's tails!, well you were cursed from touching the coin of the beaurcrat!\n");
+    printf("\nIt's tails, well you were cursed from touching the coin of the beaurcrat\n");
   }
   
   printf("you did not pass the flip test"); 
@@ -168,13 +168,13 @@ void coinFlip() {
     printf("\nIt's heads, what luck, you woke up just in time!\n");
   }
   else if (coin == 1 && call == 2) {
-    printf("It's heads.,you wake up just in time to slay a monster");
+    printf("\nIt's heads.,you wake up just in time to slay a monster\n");
   }
   else if (coin == 2 && call == 1) {
-    printf("It's tails. well can't win them all, Too bad!\n");
+    printf("\nIt's tails. well can't win them all, Too bad!\n");
   }
   else if (coin == 2 && call == 2) {
-    printf("It's tails!, a monster sneaks in your camp and strikes you in your sleep!\n");
+    printf("\nIt's tails!, a monster sneaks in your camp and strikes you in your sleep!\n");
   }
   
   printf(" you failed the flip test");
@@ -301,13 +301,13 @@ void coinFlip() {
     printf("\nIt's heads, what luck!\n");
   }
   else if (coin == 1 && call == 2) {
-    printf("It's heads., the knight agrees to his bizarre proposition and continues the journey as your companion");
+    printf("\nIt's heads., the knight agrees to his bizarre proposition and continues the journey as your companion\n");
   }
   else if (coin == 2 && call == 1) {
-    printf("It's tails. well can't win them all, Too bad!\n");
+    printf("\nIt's tails. well can't win them all, Too bad\n");
   }
   else if (coin == 2 && call == 2) {
-    printf("It's tails!, the knight gives you the potion of the cowboy reaper, a potion so cool that it will surly come in handy some time !\n");
+    printf("\nIt's tails!, the knight gives you the potion of the cowboy reaper, a potion so cool that it will surly come in handy some time !\n");
   }
   
 printf("eventally you both said your goodbyes and you continued your journey");
@@ -325,30 +325,33 @@ while (getchar() != '\n');
 printf(" after some time going right you encounter a dog in the swamp");
 while (getchar() != '\n');
 
-printf("\n you decided to take it with you in your journey to keep you company\n");
+printf(" you decided to take it with you in your journey to keep you company");
 while (getchar() != '\n');
 
-printf("\nunknown to you however is that the dog was a mutated monster\n");
+printf("unknown to you however is that the dog was a mutated monster");
 while (getchar() != '\n');
 
-printf("\nin the end it was too late, the dog lashed at your neck, snapping it like nothing\n");
-
-while (getchar() != '\n');
-
- printf("\nyou lay there in the swamp motionless as you have flashes of what could have been\n");
+printf("in the end it was too late, the dog lashed at your neck, snapping it like nothing");
 
 while (getchar() != '\n');
 
-printf("\n you see visions of your family and after a while you were just another dead wizard\n");
+ printf("you lay there in the swamp motionless as you have flashes of what could have been");
+
+while (getchar() != '\n');
+
+printf("you see visions of your family and after a while you were just another dead Traveler");
 
 while (getchar() != '\n');
 
 
-printf("\n your journey is over \n");
+printf(" your journey is over ");
 
 while (getchar() != '\n');
 
-printf("\nending 5\n"); 
+printf("Never judge a book by its cover Traveler, sometimes it will end your life, like right now."); 
+while (getchar() != '\n');
+
+printf("try again next time traveler"); 
 while (getchar() != '\n');
 
 break;
@@ -360,7 +363,7 @@ case 6:
 puts("\nyou quit the game, you had enough of these shenanigans\n");
 while (getchar() != '\n');
 
-printf("\nEnding 6\n"); 
+printf("you decided to touch grass, see you when you are ready again Traveler"); 
 while (getchar() != '\n');
 
 break;
@@ -371,16 +374,13 @@ case 7:
 
 puts("\nerror room teleport\n");
 
-printf("\nyou reached the error room, how did you reach it?
-	nonetheless this is a celebrating\n"); 
-while (getchar() != '\n');
-break;
-}
-default:
-{
-	puts("invalid choice, try again")
-}
+printf("you reached the error room, how did you reach it?
+	nonetheless this is a celebrating"); 
 
-Puts("Game is over, try again next time");
-return EXIT_SUCESS;
-}	
+printf("you see a portal that can take you to every room you have visited prior"); 	
+while (getchar() != '\n');
+
+printf("you decide that you want to take it"); 
+while (getchar() != '\n');
+
+break;
