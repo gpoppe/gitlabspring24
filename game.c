@@ -34,7 +34,7 @@
 //AK
 
 // dailycrocs
-
+// Kaylee H.
 
 #include <stdlib.h>
 #include <ctype.h>
@@ -3980,6 +3980,145 @@ printf("You may now go back to the main room now. GOOD LUCK \n)");
 			case 52:
 			{
 				puts("room52");
+			printf("It was a normal day as you commute back home from school. You come across an old box dumped in the alley. You pick it up, it reads...\n");
+        printf("PLAY ME IF YOU DARE!\n");
+        printf("Oh no! You have opened the box! This is life or death! Welcome to... Doors with no End!\n");
+        printf("You are thrown into a room filling up with water! Your anxiety rises as you must think of something quick!\n");
+        printf("You then see the door marked 52, you open the door with all your strength as you barely make it out on time. \n");
+        printf("You hear this evil voice laughing, taunting you to guess the riddle in order to get to the next door and possibly stay alive. All answers start with a capital letter. \n");
+
+    do {
+        printf("\nLife or Death:\n");
+        for(int i = 0; i < 5; i++) {
+            printf("%d. %s\n", i + 1, options[i]);
+        }
+        printf("6. Quit\n");
+
+        printf("Proceed with caution and choose a number: ");
+        scanf("%d", &choice);
+
+        switch(choice) {
+            case 1:
+                Haunted();
+            break;
+            case 2:
+                Spooky();
+           break;
+            case 3:
+                Ride();
+            break;
+            case 4:
+                Zombie();
+            break;
+            case 5:
+                Ancient();
+            break;
+            case 6:
+                printf("See you next time!\n");
+            exit(EXIT_SUCCESS);
+        }
+    } while(choice != 6);
+
+    return EXIT_SUCCESS;
+}
+
+int Haunted() {
+    printf("You decide to explore the forest. It's filled with mythical creatures.\n");
+    printf("\n Kind fairies come to warn you! They tell you to solve the riddle to get out before night falls! \n");
+
+        char answer[100];
+        printf("Which word in the dictionary is spelled incorrectly?\n");
+        for (int attempt = 0; attempt < 2; attempt++) {
+            printf("Guess %d: ", attempt + 1);
+            scanf("%s", answer);
+            if (strcmp(answer, "Incorrectly") == 0) {
+                printf("Correct! You solved the riddle.\n");
+                return EXIT_SUCCESS;
+            } else {
+                printf("Incorrect!.\n");
+            }
+        }
+        printf("RIP!! You didn't solve the riddle. Answer is 'Incorrectly'.\n");
+        return EXIT_SUCCESS;
+}
+
+            int Spooky() {
+    printf("You have to go inside an abandon mansion.\n");
+    printf("You must defeat the Vampire! Solve the riddle!\n");
+
+    char answer[100];
+    printf("What word contains all of the twenty-six letters??\n");
+    for (int attempt = 0; attempt < 2; attempt++) {
+        printf("Guess %d: ", attempt + 1);
+        scanf("%s", answer);
+        if (strcmp(answer, "Alphabet") == 0) {
+            printf("Correct! You solved the riddle.\n");
+            return EXIT_SUCCESS;
+        } else {
+            printf("Incorrect!.\n");
+        }
+    }
+    printf("RIP!! You didn't solve the riddle. Answer is 'Alphabet'.\n");
+                        return EXIT_SUCCESS;
+            }
+
+            int Ride() {
+    printf("You ride aboard the ship into treacherous waters.\n");
+    printf("You must defeat the Kraken! Solve the riddle!\n");
+        char answer[100];
+        printf("What starts with a T, ends with a T, and has T in it?\n");
+        for (int attempt = 0; attempt < 2; attempt++) {
+            printf("Guess %d: ", attempt + 1);
+            scanf("%s", answer);
+            if (strcmp(answer, "Teapot") == 0) {
+                printf("Correct! You solved the riddle.\n");
+                return EXIT_SUCCESS;
+            } else {
+                printf("Incorrect!.\n");
+            }
+        printf("RIP!! You didn't solve the riddle. Answer is 'Teapot'.\n");
+        return EXIT_SUCCESS;
+    }
+}
+
+            int Zombie() {
+    printf("You walk through a haunted graveyard only to see zombies wanting to eat you.\n");
+    printf("You must run from the zombies! Solve the riddle!\n");
+    char answer[100];
+    printf("What has words, but never speaks?\n");
+    for (int attempt = 0; attempt < 2; attempt++) {
+        printf("Guess %d: ", attempt + 1);
+        scanf("%s", answer);
+        if (strcmp(answer, "Book") == 0) {
+            printf("Correct! You solved the riddle.\n");
+            return EXIT_SUCCESS;
+        } else {
+            printf("Incorrect!.\n");
+        }
+    }
+    printf("RIP!! You didn't solve the riddle. Answer is 'Book'.\n");
+                return EXIT_SUCCESS;
+            }
+
+            int Ancient() {
+                printf("You find yourself in an ancient long lost jungle filled with booby traps and a curse. \n");
+    printf("Lift the curse and save the innocent people! Solve the riddle!\n");
+
+    char answer[100];
+    printf("What building has the most stories?\n");
+    for (int attempt = 0; attempt < 2; attempt++) {
+        printf("Guess %d: ", attempt + 1);
+        scanf("%s", answer);
+        if (strcmp(answer, "Library") == 0) {
+            printf("Correct! You solved the riddle.\n");
+            return EXIT_SUCCESS;
+        } else {
+            printf("Incorrect!.\n");
+        }
+    }
+    printf("RIP!! You didn't solve the riddle. Answer is 'Library'.\n");
+                return EXIT_SUCCESS;
+            }
 				break;
 			}
 			case 53:
