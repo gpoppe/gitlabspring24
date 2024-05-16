@@ -71,7 +71,7 @@ int cardPull();
 void rollTheDice_Highest();
 void rollTheDice_Race();
 
-
+const char* fishing(int location, int c, int randomNumber);
 
 int randomNumRoom41();
 
@@ -3038,7 +3038,32 @@ while (choice != 0)
         puts("room35");
         break;
       }
-
+      case 35:
+      {
+	      int userChoice, counter=0, randomNumber = rand() % 3 + 1;
+    const char *fishCaught[randomNumber];
+    printf("You walked into room %d.\nYou've been transported to the fishing realm, where you must catch %d fish in order to make it out of this mysterious room, best of luck!", choice, randomNumber);
+    while(counter < randomNumber)
+    {
+    printf("\n\nEnter a number 1-5 to pick a location to fish:");
+    printf("\n1. Lake\n2. River\n3. Beach\n4. Pond\n5. On a Boat in the Ocean\nChoice: ");
+    scanf("%d", &userChoice);
+    const char* result = fishing(userChoice, counter, randomNumber);
+    if(result != "null")
+    {
+    fishCaught[counter] = result;
+    counter++;
+    }
+    }
+    
+    printf("\n\nGreat fishing out there, you caught:\n");
+    for(int i=0; i<randomNumber; i++)
+    {
+        printf("-%s\n",fishCaught[i]);
+    }
+    printf("\n");
+    break;
+      }
       case 36:
       {
         puts("room36");
@@ -4010,6 +4035,108 @@ printf("You may now go back to the main room now. GOOD LUCK \n)");
 	}
 	puts("Game Over");
 	return EXIT_SUCCESS;
+}
+
+const char* fishing(int location, int c, int randomNumber)
+{
+    int userChoice, caughtOrNot = rand() % 2 + 1;
+    const char *fishCaught[randomNumber];
+    char *fishingSpot[6]={"null","Lake","River","Beach","Pond","Ocean"};
+    printf("You've made it to the %s!",fishingSpot[location]);
+        printf("\nChoose a bait to catch something:\n1. Live Bait\n2. Lure\nChoice: ");
+        scanf("%d", &userChoice);
+        switch(location)
+        {
+            case 1:
+            if(userChoice==1 && caughtOrNot==1)
+                {
+                printf("Congrats you caught a Largemouth Bass!");
+                return "Largemouth Bass";
+                }
+            if(userChoice==2 && caughtOrNot==1)
+                {
+                printf("Congrats you caught a Catfish!");
+                return "Catfish";
+                }
+            else
+                {
+                printf("You didn't catch anything, try again.");
+                return "null";
+                }
+            break;
+            
+            case 2:
+            if(userChoice==1 && caughtOrNot==1)
+                {
+                printf("Congrats you caught a Salmon!");
+                return "Salmon";
+                }
+            if(userChoice==2 && caughtOrNot==1)
+                {
+                printf("Congrats you caught a Chain Pickerel!");
+                return "Chain Pickerel";
+                }
+            else
+                {
+                printf("You didn't catch anything, try again.");
+                return "null";
+                }
+            break;
+            
+            case 3:
+            if(userChoice==1 && caughtOrNot==1)
+                {
+                printf("Congrats you caught a Flounder!");
+                return "Flounder";
+                }
+            if(userChoice==2 && caughtOrNot==1)
+                {
+                printf("Congrats you caught a Red Drum!");
+                return "Red Drum";
+                }
+            else
+                {
+                printf("You didn't catch anything, try again.");
+                return "null";
+                }
+            break;
+            
+            case 4:
+            if(userChoice==1 && caughtOrNot==1)
+                {
+                printf("Congrats you caught a Smallmouth Bass!");
+                return "Smallmouth Bass";
+                }
+            if(userChoice==2 && caughtOrNot==1)
+                {
+                printf("Congrats you caught a Bluegill!");
+                return "Bluegill";
+                }
+            else
+                {
+                printf("You didn't catch anything, try again.");
+                return "null";
+                }
+            break;
+            
+            case 5:
+            if(userChoice==1 && caughtOrNot==1)
+                {
+                printf("Congrats you caught a Tuna Fish!");
+                return "Tuna Fish";
+                }
+            if(userChoice==2 && caughtOrNot==1)
+                {
+                printf("Congrats you caught a Swordfish!");
+                return "Swordfish";
+                }
+            else
+                {
+                printf("You didn't catch anything, try again.");
+                return "null";
+                }
+            break;
+        }
 }
 
 	void guessGame()
