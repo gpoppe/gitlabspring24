@@ -21,7 +21,6 @@
 
 //Jose A. Ruiz
 
-
 //Joshua F.
 
 
@@ -35,7 +34,7 @@
 
 // dailycrocs
 
-
+//Samuel Omenwu
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
@@ -172,6 +171,11 @@ void multiplicationGame();
 void dragonbarrowChoices();
 
 void guessGame();
+
+void colorStory();
+void easiestChallenge();
+void numberGuessingChallenge();
+
 
 int main(int argc, char *argv[])
 {
@@ -698,7 +702,12 @@ while (choice != 0)
 								printf("You have a moment of silence with the voice seemingly gone.");
 								while(getchar() != '\n');
 
-								printf("Linear cracks start to form on all parts of the walls around the room with a red hue escaping the cracks");
+                                                        printf("You have a moment of silence with the voice seemingly gone.");
+                                                                while(getchar() != '\n');
+
+                                                                while(getchar() != '\n');       
+
+        								printf("Linear cracks start to form on all parts of the walls around the room with a red hue escaping the cracks");
 								while(getchar() != '\n');
 
 								printf("The voice continues its abscence but a siren begins to blare in the room.");
@@ -2235,14 +2244,175 @@ while (choice != 0)
 				break;
 			}
 			case 27:
-			{
+{			
 				puts("room27");
+				    srand(time(NULL));
+    int choice;
+    int completedChallenges = 0;
+    printf("Welcome hero You must complete 3 challenges\n\nChoose the 1st challenge to complete\n");
+    while (completedChallenges < 3)
+    {
+        printf("1. The Dragon Story\n");
+        printf("2. The dreadfull doors\n");
+        printf("3. George\n");
+        scanf("%d",&choice);
 
+        switch (choice)
+        {
+            case 1:
+                {
+                    colorStory();
+                    completedChallenges++;
+                    break;
+                }
+            case 2:
+                {
+                    easiestChallenge();
+                    completedChallenges++;
+                    break;
+                }
+            case 3:
+                {
+                    numberGuessingChallenge();
+                    completedChallenges++;
+                    break;
+                }
+            default:
+                {
+                    printf("Invalid choice!\n");
+                    break;
+                }
+        }
+    }
+    printf("Challenges completed\n");
+void colorStory()
+{
+    printf("Rules of this challenge 1 for red, 2 for blue, 3 for yellow and you must answer all 3 of the questions to pass \n");
+    int color1 = rand() % 3;
+    int color2 = rand() % 3;
+    int color3 = rand() % 3;
+    printf("Once upon a time, there was a ");
+    if (color1 == 1)
+        printf("red ");
+    else if (color1 == 2)
+        printf("blue ");
+    else
+        printf("yellow ");
+    printf("dragon. It flew across the ");
+    if (color2 == 1)
+    {
+        printf("red ");
+    }
+    else if (color2 == 2)
+    {
+        printf("blue ");
+    }
+    else
+    {
+        printf("yellow ");
+    }
+    printf("sky. And breathed ");
+    if (color3 == 1)
+    {
+        printf("red ");
+    }
+    else if (color3 == 2)
+    {
+        printf("blue ");
+    }
+    else
+    {
+        printf("yellow ");
+    }
+    printf("fire to incinerate its enemies.\n");
+    int guess1, guess2, guess3;
+    printf("What color was the dragon?:\n ");
+    scanf("%d",&guess1);
+    if(guess1 != color1)
+    {
+        printf("Bruh \nnext challenge \n");
+        return;
+    }
+    printf("What color was the sky?:\n ");
+    scanf("%d",&guess2);
+    if(guess2 != color2)
+    {
+        printf("Bruh \nnext challenge \n");
+        return;
+    }
+    printf("What color was the dragon's breath?: ");
+    scanf("%d",&guess3);
+    if(guess3 != color3)
+    {
+        printf("Bruh \nnext challenge \n");
+        return;
+    }
+    printf("Congratulations! You guessed all the colors correctly.\nChallenge completed\n");
+}
 
+void easiestChallenge()
+{
+    printf("Welcome to the Dreadfull Door challenge, hero these are the rules 1 for red and 2 for blue you have 3 tries\n");
+    int correctChoice = 1;
+    int remainingTries = 3;
+    int choice;
+    while (remainingTries > 0)
+    {
+        printf("Go through the red door\n");
+        printf("Enter your choice: ");
+        scanf("%d",&choice);
+        if (choice == correctChoice)
+        {
+            printf("Congratulations You win!\nChallenge complete\n");
+            return;
+        }
+        else
+        {
+            if (remainingTries == 3)
+                printf("Ok here we go through the red door.\nYou have 2 more tries left.\n");
+            else if (remainingTries == 2)
+                printf("Bruh Go through the God**** RED door!!!\n You have 1 more try left.\n");
+            else
+            printf("Bruh\nnext challenge \n");
+            remainingTries--;
+        }
+    }
+}
 
-				//samuel
+void numberGuessingChallenge()
+{
+    printf("In this  challenge you must guess the numbers George is thinking and at least get 1 point you have 3 tries\n");
+    srand(time(NULL));
+    int randomNumber = rand() % 5;
+    int score[3] = {0};
+    for (int i = 0; i < 3; i++)
+    {
+        int guess;
+        printf("George:Guess the number between 1 and 5: ");
+        scanf("%d",&guess);
+        if (guess == randomNumber)
+        {
+            printf("George:You get a point\n");
+            score[i] = 1;
+            randomNumber = rand() % 5;
+        }
+        else
+        {
+            printf("George:Wrong guess.\n");
+        }
+    }
+    int totalScore = score[0] + score[1] + score[2];
+    if (totalScore < 1)
+    {
+        printf("George:you lose, you're a loser\n");
+    }
+    else
+    {
+        printf("George:Nice you won your total score is: %d\n", totalScore);
+    }
+}
 				break;
-			}
+}
 			case 28:
 			{
 				puts("room28");
@@ -2339,7 +2509,7 @@ while (choice != 0)
 
 
 				break;
-			}
+}
 			case 31:
 {
         puts("room31");
