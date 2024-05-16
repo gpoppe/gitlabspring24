@@ -163,3 +163,26 @@ break;
 
 }
 case 5:
+{
+
+puts("\n you walk back to the next room which is room 100\n"); 
+while (getchar() != '\n');
+
+printf("\n from there you meet up with a knight who just so happened
+	to be traveling to the same dungeon you were at\n"); 
+while (getchar() != '\n');
+
+printf("\nsoon you went to the swamp with companion in tow\n");
+while (getchar() != '\n');
+
+printf("\neventally you both went all the way to the end
+	of the dungeon and got enough loot to buy a castle
+	of your own\n");
+
+while (getchar() != '\n');
+
+printf("\nending 4\n"); 
+while (getchar() != '\n');
+break;
+
+}	
