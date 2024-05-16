@@ -77,7 +77,7 @@ void ajlSpace()
 void coinFlip() {
   int call = 0;
 
-  printf("You know the name of the game : call heads{1} or tails{2}: ");
+  printf("You know the rules and so do I : call heads{1} or tails{2}: ");
   scanf("%d", &call);
     
   if (call == 1 || call == 2) {
@@ -86,7 +86,7 @@ void coinFlip() {
   }
   else 
   {
-    printf("You call an invalid number, so your opponent calls instead!\n");
+    printf("You call an invalid number, the game will call instead since you were being a bit cheeky!\n");
     call = (rand() % 2) + 1;
     
     if (call == 1){
@@ -118,7 +118,7 @@ while (getchar() != '\n');
 
 printf("you were cursed by touching the coin, what curse you may ask? well its a curse that turns anyone who fails the coin flip test into a corpse"); 
 while (getchar() != '\n');
-printf("you died, end of story, Ending 1"); 
+printf("you died, end of story, try again next time Traveler"); 
 while (getchar() != '\n');
  break;
 
@@ -132,10 +132,61 @@ while (getchar() != '\n');
 printf("you were so bored of waiting that you fell asleep"); 
 while (getchar() != '\n');
 
+void ajlSpace()
+{
+    while (getchar() != '\n')
+        ;
+}
+
+void coinFlip() {
+  int call = 0;
+
+  printf("You know the rules and so Do I : call heads{1} or tails{2}: ");
+  scanf("%d", &call);
+    
+  if (call == 1 || call == 2) {
+    printf("The coin from above flips!\n");
+    
+  }
+  else 
+  {
+    printf("You call an invalid number, the game will call instead since you were being a bit cheeky!\n");
+    call = (rand() % 2) + 1;
+    
+    if (call == 1){
+      printf("Luck was not on your side Fellow Traveler!\n");
+    }
+    else
+     {
+      printf("You wake up\n");
+    }
+  }
+
+    int coin = (rand() % 2) + 1;
+
+  if (coin == 1 && call == 1) {
+    printf("\nIt's heads, what luck, you woke up just in time!\n");
+  }
+  else if (coin == 1 && call == 2) {
+    printf("It's heads.,you wake up just in time to slay a monster");
+  }
+  else if (coin == 2 && call == 1) {
+    printf("It's tails. well can't win them all, Too bad!\n");
+  }
+  else if (coin == 2 && call == 2) {
+    printf("It's tails!, a monster sneaks in your camp and strikes you in your sleep!\n");
+  }
+  
+  printf(" you failed the flip test");
+while (getchar() != '\n');
+
 printf(" you died in your sleep as some monsters killed you while you were sleeping");
 while (getchar() != '\n');
-break;
 
+ printf(" what a terrible time to fall asleep, try again traveler");
+while (getchar() != '\n');
+
+break;
 }
 case 3:
 {
@@ -143,43 +194,48 @@ case 3:
 puts("\nyou went left of the swamp\n"); 
 while (getchar() != '\n');
 
-printf("\nythere is a monster in your way\n"); 
+printf("there is a monster in your way"); 
 while (getchar() != '\n');
 
-printf("\nyyou hide in the bushes before it can see you\n"); 
+printf("yyou hide in the bushes before it can see you"); 
 while (getchar() != '\n');
 
-printf("\nwhile in the bushes you peek on the monster that you were
+printf("while in the bushes you peek on the monster that you were
 	afraid of and decided to write down what you saw in yourself
-	notebook\n"); 
+	notebook"); 
 while (getchar() != '\n');
 
-printf("\nthe monster was a giant behemoth and when he walks
-	almost knocking down mountains with just his stomps alone\n"); 
+printf("the monster was a giant behemoth and when he walks
+	almost knocking down mountains with just his stomps alone"); 
 while (getchar() != '\n');
 
-printf("\nthe monster is also very vile as it sees a crocodile
+printf("the monster is also very vile as it sees a crocodile
 	just walking in their little feet
-	the monster runs at the crocodile and snaps it in two\n"); 
+	the monster runs at the crocodile and snaps it in two"); 
 while (getchar() != '\n');
 
-printf("\nyou panicked but you didn't let your nerves take control of you\n"); 
+printf("you panicked but you didn't let your nerves take control of you"); 
 while (getchar() != '\n');
 
-printf("\n once the coast was clear you went furthur deep into the swamp dungeon\n"); 
+printf("once the coast was clear you went furthur deep into the swamp dungeon"); 
 while (getchar() != '\n');
 
-printf("\nafter some time going forward and hiding from the nearby monsters 
-	as well as from the local animals that have not yet noticed your presence\n"); 
+printf("after some time going forward and hiding from the nearby monsters 
+	as well as from the local animals that have not yet noticed your presence"); 
 while (getchar() != '\n');
 
-printf("\nyou see what looks to be a portal to the exit\n"); 
+printf("you went to hiding in a cave and what luck, there is a floating door just standing near some rocks"); 
 while (getchar() != '\n');
 
-printf("\nyou take the exit and you esxaped the dungeon\n"); 
+printf("you see what looks to be a portal to the next room"); 
 while (getchar() != '\n');
 
-printf("\nEnding 2\n"); 
+
+
+printf("you take the exit and you esxaped to the next room"); 
+while (getchar() != '\n');
+
+printf("Now you go on to the next room of this journey and hope to reach the end Fellow Traveler"); 
 while (getchar() != '\n');
 break;
 
@@ -187,51 +243,7 @@ break;
 case 4:
 {
 
-	puts("\nyou went left of the swamp\n"); 
-	
-while (getchar() != '\n');
-
-printf("\nythere is a monster in your way\n"); 
-while (getchar() != '\n');
-
-printf("\nyyou hide in the bushes before it can see you\n"); 
-while (getchar() != '\n');
-
-printf("\nwhile in the bushes you peek on the monster that you were
-	afraid of and decided to write down what you saw in yourself
-	notebook\n"); 
-while (getchar() != '\n');
-
-printf("\nthe monster was a giant behemoth and when he walks
-	almost knocking down mountains with just his stomps alone\n"); 
-while (getchar() != '\n');
-
-printf("\nthe monster is also very vile as it sees a crocodile
-	just walking in their little feet
-	the monster runs at the crocodile and snaps it in two\n"); 
-while (getchar() != '\n');
-printf("\nyou panicked so much that the monster spotted you\n"); 
-while (getchar() != '\n');
-
-printf("\nthe monster first crushed your skull in with one punch\n"); 
-while (getchar() != '\n');
-
-printf("\nyou lay on the floor pulverized and dead\n"); 
-while (getchar() != '\n');
-
-printf("\this is the end of your story\n"); 
-while (getchar() != '\n');
-
-printf("\nEnding 3\n"); 
-while (getchar() != '\n');
-
-break;
-
-}
-case 5:
-{
-
-puts("\n you walk back to the next room which is room 100\n"); 
+puts("\n you walk back to the castle\n"); 
 while (getchar() != '\n');
 
 printf("\n from there you meet up with a knight who just so happened
@@ -251,7 +263,7 @@ printf("\nending 4\n");
 while (getchar() != '\n');
 break;
 }
-case 6: 
+case 5: 
 {
 	puts("\nyou went right side of the swamp, how very daring\n");
 	
@@ -289,7 +301,7 @@ while (getchar() != '\n');
 break;
 
 }
-case 7:
+case 6:
 {
 
 puts("\nyou quit the game, you had enough of these shenanigans\n");
@@ -301,10 +313,10 @@ while (getchar() != '\n');
 break;
 
 }
-case 8:
+case 7:
 {
 
-puts("error room teleport");
+puts("\nerror room teleport\n");
 
 printf("\nyou reached the error room, how did you reach it?
 	nonetheless this is a celebrating\n"); 
