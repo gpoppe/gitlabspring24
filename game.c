@@ -20,7 +20,7 @@
 
 //Zachery Rouzaud
 //Jose A. Ruiz
-//Diego Espinoza
+
 
 //Joshua F.
 
@@ -34,7 +34,7 @@
 //AK
 
 // dailycrocs
-
+//Samuel Omenwu
 
 #include <stdlib.h>
 #include <ctype.h>
@@ -45,6 +45,8 @@
 #include <unistd.h>
 #include <math.h>
 
+void exploreRoom8(int roomNumber);
+void displayMenu();
 
 void doorChoiceRoom9();
 
@@ -171,6 +173,9 @@ void generateGold();
 void multiplicationGame();
 
 void dragonbarrowChoices();
+void colorStory();
+void easiestChallenge();
+void numberGuessingChallenge();
 
 void guessGame();
 
@@ -626,6 +631,37 @@ while (choice != 0)
 			case 8:
 			{
 				puts("room8");
+				int choice =0;
+				char name[30] = "bob";
+				srand(time(NULL));
+				printf("Pleas enter your name: ");
+				scanf("%s", name);
+				printf("Hello %s welcome to the RPG game!\n", name);
+				while(choice !=99)
+				{
+					 puts("You find yourself in a dark room and you are not sure how you got here.");
+               				 puts("As you look around you see the room has 55 doors, each labeled with a number.");
+               				 puts("The room starts filling with water and you must choose a door to open or you will likely drown. you may quit anytime by selecting option 99.");
+               				 puts("What door do you choose?");
+               				 scanf("%d",&choice);
+
+					 switch(choice)
+					 {
+						case 1:
+						case 2:
+						case 3: 
+						case 4:
+						case 5:
+						exploreRoom8(choice);
+						break;
+						case 99:
+						printf("Exiting the game");
+						break;
+						default:
+						printf("Invalid choice");
+				 	 }
+				}
+
 				break;
 			}
 			case 9:
@@ -2239,6 +2275,45 @@ while (choice != 0)
 			case 27:
 			{
 				puts("room27");
+				  srand(time(NULL));
+    int choice;
+    int completedChallenges = 0;
+    printf("Welcome hero You must complete 3 challenges\n\nChoose the 1st challenge to complete\n");
+    while (completedChallenges < 3)
+    {
+        printf("1. The Dragon Story\n");
+        printf("2. The dreadfull doors\n");
+        printf("3. George\n");
+        scanf("%d",&choice);
+
+        switch (choice)
+        {
+            case 1:
+                {
+                    colorStory();
+                    completedChallenges++;
+                    break;
+                }
+            case 2:
+                {
+                    easiestChallenge();
+                    completedChallenges++;
+                    break;
+                }
+            case 3:
+                {
+                    numberGuessingChallenge();
+                    completedChallenges++;
+                    break;
+                }
+            default:
+                {
+                    printf("Invalid choice!\n");
+                    break;
+                }
+        }
+    }
+    printf("Challenges completed\n");
 				break;
 			}
 			case 28:
@@ -7425,6 +7500,123 @@ int i_want_to_go_home_grandpa(){
 
 
 
+void exploreRoom8(int roomNumber) {
+    printf("\nEntering room %d\n", roomNumber);
+    int action;
+
+    switch (roomNumber) {
+        case 1:
+            printf("You enter a room filled with exotic birds.\n");
+            printf("Choose your action: 1. Feed them, 2. Observe them, 3. Catch one, 4. Sing to them, 5. Leave quietly\n");
+            scanf("%d", &action);
+            switch (action) {
+                case 1:
+                    printf("The birds flock to you, leaving behind a shiny key!\n");
+                    break;
+                case 2:
+                    printf("You enjoy the peaceful moment and feel rejuvenated!\n");
+                    break;
+                case 3:
+                    printf("The birds scatter and you leave empty-handed.\n");
+                    break;
+                case 4:
+                    printf("They sing back, revealing a hidden passage!\n");
+                    break;
+                case 5:
+                    printf("You leave the room as you found it.\n");
+                    break;
+            }
+            break;
+        case 2:
+            printf("You enter a chamber of mirrors.\n");
+            printf("Choose your action: 1. Look into a mirror, 2. Break a mirror, 3. Rearrange the mirrors, 4. Search behind the mirrors, 5. Leave immediately\n");
+            scanf("%d", &action);
+            switch (action) {
+                case 1:
+                    printf("You see your future and gain wisdom!\n");
+                    break;
+                case 2:
+                    printf("A spirit is released, cursing you!\n");
+                    break;
+                case 3:
+                    printf("The light reflects to show a hidden door!\n");
+                    break;
+                case 4:
+                    printf("You find a hidden treasure chest!\n");
+                    break;
+                case 5:
+                    printf("You feel a chill as you quickly exit.\n");
+                    break;
+            }
+            break;
+        case 3:
+            printf("You find yourself in a room with a giant chessboard.\n");
+            printf("Choose your action: 1. Play a game, 2. Move a knight, 3. Sit and think, 4. Rearrange the pieces, 5. Leave the board\n");
+            scanf("%d", &action);
+            switch (action) {
+                case 1:
+                    printf("You outsmart the magical opponent and win a crown!\n");
+                    break;
+                case 2:
+                    printf("Moving the knight opens a secret drawer with a map!\n");
+                    break;
+                case 3:
+                    printf("You contemplate deeply, gaining insight!\n");
+                    break;
+                case 4:
+                    printf("Rearranging the pieces triggers a trapdoor!\n");
+                    break;
+                case 5:
+                    printf("You step away from the game, unchanged.\n");
+                    break;
+            }
+            break;
+        case 4:
+            printf("You enter a dimly lit laboratory.\n");
+            printf("Choose your action: 1. Mix potions, 2. Read the notes, 3. Use the microscope, 4. Ignite the Bunsen burner, 5. Leave quietly\n");
+            scanf("%d", &action);
+            switch (action) {
+                case 1:
+                    printf("You create a healing potion!\n");
+                    break;
+                case 2:
+                    printf("You learn a secret of the philosopher's stone!\n");
+                    break;
+                case 3:
+                    printf("You discover a new bacteria!\n");
+                    break;
+                case 4:
+                    printf("The flame reveals a hidden safe!\n");
+                    break;
+                case 5:
+                    printf("You leave the lab untouched.\n");
+                    break;
+            }
+            break;
+        case 5:
+            printf("You enter a serene garden.\n");
+            printf("Choose your action: 1. Water the plants, 2. Rest by the fountain, 3. Pick a flower, 4. Meditate, 5. Walk along the path\n");
+            scanf("%d", &action);
+            switch (action) {
+                case 1:
+                    printf("The plants grow instantly, revealing a key!\n");
+                    break;
+                case 2:
+                    printf("The soothing water restores your health!\n");
+                    break;
+                case 3:
+                    printf("You find a rare and valuable blossom!\n");
+                    break;
+                case 4:
+                    printf("Meditation enlightens you, boosting your wisdom!\n");
+                    break;
+                case 5:
+                    printf("The path leads you to a hidden gate!\n");
+                    break;
+            }
+            break;
+    }
+}
 
 
 void challenge()
@@ -7462,7 +7654,133 @@ void challenge()
     }
     printf("Congratulations you have made it out of the room\n");
 
+}
 
+void colorStory()
+{
+    printf("Rules of this challenge 1 for red, 2 for blue, 3 for yellow and you must answer all 3 of the questions to pass \n");
+    int color1 = rand() % 3;
+    int color2 = rand() % 3;
+    int color3 = rand() % 3;
+    printf("Once upon a time, there was a ");
+    if (color1 == 1)
+        printf("red ");
+    else if (color1 == 2)
+        printf("blue ");
+    else
+        printf("yellow ");
+    printf("dragon. It flew across the ");
+    if (color2 == 1)
+    {
+        printf("red ");
+    }
+    else if (color2 == 2)
+    {
+        printf("blue ");
+    }
+    else
+    {
+        printf("yellow ");
+    }
+    printf("sky. And breathed ");
+    if (color3 == 1)
+    {
+        printf("red ");
+    }
+    else if (color3 == 2)
+    {
+        printf("blue ");
+    }
+    else
+    {
+        printf("yellow ");
+    }
+    printf("fire to incinerate its enemies.\n");
+    int guess1, guess2, guess3;
+    printf("What color was the dragon?:\n ");
+    scanf("%d",&guess1);
+    if(guess1 != color1)
+    {
+        printf("Bruh \nnext challenge \n");
+        return;
+    }
+    printf("What color was the sky?: ");
+    scanf("%d",&guess2);
+    if(guess2 != color2)
+    {
+        printf("Bruh \nnext challenge \n");
+        return;
+    }
+    printf("What color was the dragon's breath?: ");
+    scanf("%d",&guess3);
+    if(guess3 != color3)
+    {
+        printf("Bruh \nnext challenge \n");
+        return;
+    }
+    printf("Congratulations! You guessed all the colors correctly.\nChallenge completed\n");
+}
+
+void easiestChallenge()
+{
+    printf("Welcome to the Dreadfull Door challenge, hero these are the rules 1 for red and 2 for blue you have 3 tries\n");
+    int correctChoice = 1;
+    int remainingTries = 3;
+    int choice;
+    while (remainingTries > 0)
+    {
+        printf("Go through the red door\n");
+        printf("Enter your choice: ");
+        scanf("%d",&choice);
+        if (choice == correctChoice)
+        {
+            printf("Congratulations You win!\nChallenge complete\n");
+            return;
+        }
+        else
+        {
+            if (remainingTries == 3)
+                printf("Ok here we go through the red door.\nYou have 2 more tries left.\n");
+            else if (remainingTries == 2)
+                printf("Bruh Go through the God**** RED door!!!\n You have 1 more try left.\n");
+            else
+            printf("Bruh\nnext challenge \n");
+            remainingTries--;
+        }
+    }
+}
+
+void numberGuessingChallenge()
+{
+    printf("In this  challenge you must guess the numbers George is thinking and at least get 1 point you have 3 tries\n");
+    srand(time(NULL));
+    int randomNumber = rand() % 5;
+    int score[3] = {0};
+    for (int i = 0; i < 3; i++)
+    {
+        int guess;
+        printf("George:Guess the number between 1 and 5: ");
+        scanf("%d",&guess);
+        if (guess == randomNumber)
+        {
+            printf("George:You get a point\n");
+            score[i] = 1;
+            randomNumber = rand() % 5;
+        }
+        else
+        {
+            printf("George:Wrong guess.\n");
+        }
+    }
+    int totalScore = score[0] + score[1] + score[2];
+    if (totalScore < 1)
+    {
+        printf("George:you lose, you're a loser\n");
+    }
+    else
+    {
+        printf("George:Nice you won your total score is: %d\n", totalScore);
+    }
 }
 
 void diegoFunction()
