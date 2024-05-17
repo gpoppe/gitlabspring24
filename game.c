@@ -7814,42 +7814,7 @@ int i_want_to_go_home_grandpa(){
 }
 
 
-<<<<<<< HEAD
-=======
-void clearBuffer() 
-{
-    while (getchar() != '\n');
-}
 
-void ajlSpace() {
-    while (getchar() != '\n');
-}
-
-void coinFlip() 
-{
-    int call;
-    printf("You know the rules and so do I: call heads {1} or tails {2}: ");
-    scanf("%d", &call);
-    clearBuffer();
-
-    if (call != 1 && call != 2) 
-    {
-        printf("Invalid input. The game will call instead.\n");
-        call = (rand() % 2) + 1;
-    }
-
-    int coin = (rand() % 2) + 1;
-
-    if (coin == call)
-     {
-        printf("You guessed correctly! You get a shiny relic.\n");
-    }
-     else 
-    {
-        printf("You guessed wrong! you get a coin.\n");
-    }
-}
->>>>>>> c2786008774400c27694df27113a0448ee6fdcee
 
 bool fight(int choose, int strength, int agility, int intelligence)
 {
