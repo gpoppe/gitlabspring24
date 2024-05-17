@@ -80,6 +80,8 @@ void rollTheDice_Race();
 
 
 void clearBuffer();
+void ajlSpace();
+void coinFlip();
 <<<<<<< HEAD
 =======
 void ajlSpace();
