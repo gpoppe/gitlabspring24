@@ -71,7 +71,9 @@ int cardPull();
 void rollTheDice_Highest();
 void rollTheDice_Race();
 
-
+void clearBuffer();
+void ajlSpace();
+void coinFlip();
 
 int randomNumRoom41();
 
@@ -7412,6 +7414,38 @@ int i_want_to_go_home_grandpa(){
     return 10;
 }
 
+void clearBuffer() 
+{
+    while (getchar() != '\n');
+}
 
+void ajlSpace() {
+    while (getchar() != '\n');
+}
+
+void coinFlip() 
+{
+    int call;
+    printf("You know the rules and so do I: call heads {1} or tails {2}: ");
+    scanf("%d", &call);
+    clearBuffer();
+
+    if (call != 1 && call != 2) 
+    {
+        printf("Invalid input. The game will call instead.\n");
+        call = (rand() % 2) + 1;
+    }
+
+    int coin = (rand() % 2) + 1;
+
+    if (coin == call)
+     {
+        printf("You guessed correctly! You get a shiny relic.\n");
+    }
+     else 
+    {
+        printf("You guessed wrong! you get a coin.\n");
+    }
+}
 
 
