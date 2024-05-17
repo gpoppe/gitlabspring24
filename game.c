@@ -82,16 +82,10 @@ void rollTheDice_Race();
 void clearBuffer();
 void ajlSpace();
 void coinFlip();
-<<<<<<< HEAD
-=======
 void ajlSpace();
 void coinFlip();
 
 void diegoFunction();
-
-
-
->>>>>>> c2786008774400c27694df27113a0448ee6fdcee
 int randomNumRoom41();
 
 void doorChoice();
@@ -1979,7 +1973,6 @@ printf("");
 			case 20:
 			{
 				puts("room20");
-				puts("room20");
 			puts("You've entered room 20, the BEST room in this RPG.\n");
 			puts("You will face a series of 3 challenges(mini-games) in order to proceed. \n");
 			puts("First a simple riddle, second a number guessing challenge, and third a multiplication problem. \n");
@@ -2111,42 +2104,11 @@ printf("");
 			case 21:
 			{
                 puts("room21");
-                challenge();
                 break;
 			}
 			case 22:
 			{
-				
-
-                    void coinFlip() 
-{
-    int call;
-    printf("You know the rules and so do I: call heads {1} or tails {2}: ");
-    scanf("%d", &call);
-    clearBuffer();
-
-    if (call != 1 && call != 2) 
-    {
-        printf("Invalid input. The game will call instead.\n");
-        call = (rand() % 2) + 1;
-    }
-
-    int coin = (rand() % 2) + 1;
-
-    if (coin == call)
-     {
-        printf("You guessed correctly! You get a shiny relic.\n");
-    }
-     else 
-    {
-        printf("You guessed wrong! you get a coin.\n");
-    }
-}
-
-
-
-
-                puts("room22");
+			puts("room22");
                 int sub_choice = 0;
                 char playerName[30];
 
@@ -2173,7 +2135,30 @@ printf("");
                             printf("But you see a shiny object near the bureaucrat's hand.\n");
                             printf("You must flip a coin to see if what you saw was a relic or just a shiny coin.\n");
 
-                            coinFlip();
+                             void coinFlip() 
+{
+    int call;
+    printf("You know the rules and so do I: call heads {1} or tails {2}: ");
+    scanf("%d", &call);
+    clearBuffer();
+
+    if (call != 1 && call != 2) 
+    {
+        printf("Invalid input. The game will call instead.\n");
+        call = (rand() % 2) + 1;
+    }
+
+    int coin = (rand() % 2) + 1;
+
+    if (coin == call)
+     {
+        printf("You guessed correctly! You get a shiny relic.\n");
+    }
+     else 
+    {
+        printf("You guessed wrong! you get a coin.\n");
+    }
+}
 
                             printf("You did not pass the flip test.\n");
                             printf("You just had some fog in your eyes, it was just a regular shiny coin.\n");
