@@ -624,13 +624,84 @@ while (choice != 0)
         puts("      Indeed... Funkos are the best!");
         puts("\n~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ");
         break;
-			}
+	}
 
             case 8:
              {
-                puts("room8");
+                void clearBuffer() 
+{
+    while (getchar() != '\n');
+}
+
+void ajlSpace() {
+    while (getchar() != '\n');
+}
+
+void coinFlip() 
+{
+    int call;
+    printf("You know the rules and so do I: call heads {1} or tails {2}: ");
+    scanf("%d", &call);
+    clearBuffer();
+
+    if (call != 1 && call != 2) 
+    {
+        printf("Invalid input. The game will call instead.\n");
+        call = (rand() % 2) + 1;
+    }
+
+    int coin = (rand() % 2) + 1;
+
+    if (coin == call)
+     {
+        printf("You guessed correctly! You get a shiny relic.\n");
+    }
+     else 
+    {
+        printf("You guessed wrong! you get a coin.\n");
+    }
+}
+
+
+
+
+           	 puts("room8");
                 int sub_choice = 0;
                 char playerName[30];
+
+                void clearBuffer() 
+{
+    while (getchar() != '\n');
+}
+
+void ajlSpace() {
+    while (getchar() != '\n');
+}
+
+void coinFlip() 
+{
+    int call;
+    printf("You know the rules and so do I: call heads {1} or tails {2}: ");
+    scanf("%d", &call);
+    clearBuffer();
+
+    if (call != 1 && call != 2) 
+    {
+        printf("Invalid input. The game will call instead.\n");
+        call = (rand() % 2) + 1;
+    }
+
+    int coin = (rand() % 2) + 1;
+
+    if (coin == call)
+     {
+        printf("You guessed correctly! You get a shiny relic.\n");
+    }
+     else 
+    {
+        printf("You guessed wrong! you get a coin.\n");
+    }
+}
 
                 printf("Please enter your player name: ");
                 scanf("%29s", playerName);
@@ -640,12 +711,14 @@ while (choice != 0)
 
                 printf("\nTraveler %s, in order to progress the story you must use the ENTER key during gameplay.\n", playerName);
 
-                while(sub_choice != 7) {
+                while(sub_choice != 7) 
+                {
                     puts("\nYou are in the swampy side of the kingdom\n");
                     puts(" [1]: go straight, [2]: stay put, [3]: go left, [4]: go back, [5]: go right, [6]: exit the game, [7]: secret ");
                     scanf("%d", &sub_choice);
 
-                    switch(sub_choice) {
+                    switch(sub_choice)
+                     {
                         case 1: 
                             {
                             puts("\nYou went forward\n");
@@ -7419,36 +7492,4 @@ int i_want_to_go_home_grandpa(){
 
 
 
-void clearBuffer() 
-{
-    while (getchar() != '\n');
-}
 
-void ajlSpace() {
-    while (getchar() != '\n');
-}
-
-void coinFlip() 
-{
-    int call;
-    printf("You know the rules and so do I: call heads {1} or tails {2}: ");
-    scanf("%d", &call);
-    clearBuffer();
-
-    if (call != 1 && call != 2) 
-    {
-        printf("Invalid input. The game will call instead.\n");
-        call = (rand() % 2) + 1;
-    }
-
-    int coin = (rand() % 2) + 1;
-
-    if (coin == call)
-     {
-        printf("You guessed correctly! You get a shiny relic.\n");
-    }
-     else 
-    {
-        printf("You guessed wrong! you get a coin.\n");
-    }
-}
