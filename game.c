@@ -57,6 +57,7 @@ void doorChoiceRoom9();
 
 int i_want_to_go_home_grandpa();
 void func37();
+void room34Choice();
 
 void exploreRoom(int roomNo);
 void eyeGame(void);
@@ -3260,7 +3261,88 @@ printf("");
       }
       case 34:
       {
-        puts("room35");
+	      
+        puts("room34");
+	      int avatarScore = 0;
+    int enemiesScore = 0;
+    char name[30] = "HI";
+  printf("Please enter your name: ");
+  scanf("%s",name);
+    
+  printf("Hello %s welcome to your avatar training camp (game)\nToday you will be training to see if you are worthy of becoming the Avatar\n",name);
+room34Choice();
+while(1)
+{
+int avatarMove;
+printf("Enter your element for this round: Earth = 1, Water = 2, Fire = 3, Air = 4 and give up (quit) = 0: ");
+scanf("%d", &avatarMove);
+
+        if (avatarMove == 0) 
+        {
+            break;
+        }
+
+        if (avatarMove < 1 || avatarMove > 4) {
+            printf("No powers please try again\n");
+            continue;
+        }
+
+        printf("You used: ");
+        switch(avatarMove) 
+        {
+            case 1:
+                printf("EARTH\n");
+                break;
+            case 2:
+                printf("WATER\n");
+                break;
+            case 3:
+                printf("FIRE\n");
+                break;
+            case 4:
+                 printf("AIR\n");
+                 break;
+        }
+
+      int enemiesMove = rand() % 4 + 1;
+        printf("Enemies move was: ");
+        switch(enemiesMove) 
+        {
+          case 1:
+              printf("EARTH\n");
+              break;
+          case 2:
+              printf("WATER\n");
+              break;
+          case 3:
+              printf("FIRE\n");
+              break;
+          case 4:
+               printf("AIR\n");
+               break;
+        }
+
+        if (avatarMove == enemiesMove) 
+        {
+            printf("It's a tie!\n");
+        } else if (avatarMove == 1 && enemiesMove == 2 ||
+                  avatarMove== 2 && enemiesMove == 3 ||
+                  avatarMove == 4 && enemiesMove == 1 ||                         
+                  avatarMove == 3 && enemiesMove== 1) 
+        {
+            printf("You are the Avatar!!\n");
+            avatarScore++;
+        } else 
+        {
+            printf("The enemies one this time, try again to become the avatar!\n");
+            enemiesScore++;
+        }
+
+        printf("Current score: You %d - %d Enemies\n\n", avatarScore, enemiesScore);
+    }
+
+    printf("\nFinal score: Avatar %d - %d Enemies\n", avatarScore, enemiesScore);
+
         break;
       }
 
@@ -8198,6 +8280,12 @@ void numberGuessingChallenge()
         printf("George:Nice you won your total score is: %d\n", totalScore);
     }
 }
+
+void room34Choice()
+{
+    puts("Make sure to choose your moves wisely!!!!");
+}
+
 
 void diegoFunction()
 {
