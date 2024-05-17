@@ -18,9 +18,9 @@
 
 //Patrick Polanco
 
-
+//Zachery Rouzaud
 //Jose A. Ruiz
-
+//Diego Espinoza
 
 //Joshua F.
 
@@ -34,7 +34,7 @@
 //AK
 
 // dailycrocs
-
+//Samuel Omenwu
 
 #include <stdlib.h>
 #include <ctype.h>
@@ -46,6 +46,12 @@
 #include <math.h>
 
 
+void buildB();
+
+void exploreRoom8(int roomNumber);
+void displayMenu();
+
+
 void doorChoiceRoom9();
 
 
@@ -55,6 +61,7 @@ void func37();
 void exploreRoom(int roomNo);
 void eyeGame(void);
 
+void challenge();
 
 void exploreLocation(int locationChoice);
 
@@ -71,7 +78,18 @@ int cardPull();
 void rollTheDice_Highest();
 void rollTheDice_Race();
 
+
 void clearBuffer();
+<<<<<<< HEAD
+=======
+void ajlSpace();
+void coinFlip();
+
+void diegoFunction();
+
+
+
+>>>>>>> c2786008774400c27694df27113a0448ee6fdcee
 int randomNumRoom41();
 
 void doorChoice();
@@ -169,8 +187,14 @@ void generateGold();
 void multiplicationGame();
 
 void dragonbarrowChoices();
+void colorStory();
+void easiestChallenge();
+void numberGuessingChallenge();
 
 void guessGame();
+
+void enterToContinue();
+bool fight(int choose, int strength, int agility, int intelligence);
 
 int main(int argc, char *argv[])
 {
@@ -514,7 +538,95 @@ while (choice != 0)
 			}
 			case 5:
 			{
-				puts("room5");
+				puts("You enter room 5....");
+
+				bool correct = false;
+				bool living = false;
+				int statPoints1 = rand() % 50;
+				int statPoints2 = statPoints1;
+				int choiceOfExecution = 0;
+				int strength = 0;
+				int agility = 0;
+				int intelligence = 0;
+				int stats[3] = {strength, agility, intelligence};
+				char statName[3][15] = {"strength", "agility", "intelligence"};
+
+				puts("\nBefore you step into the door, your mind flashes and you are given the amount of stat points you can invest.");
+				
+				while(correct == false)
+				{	
+					statPoints1 = statPoints2;
+					for (int i = 0; i < 3; i++)
+					{
+						printf("You have: %d stat points left for allocation!\n", statPoints1);
+						printf("How many points will you allocate to [%s]?:\n", statName[i]);
+						scanf(" %d", &stats[i]);
+						statPoints1 = statPoints1 - stats[i];
+						if (statPoints1 < 0 || (i == 2 && statPoints1 != 0))
+						{
+							puts("You just can't follow directions can you? Reallocate your points correctly this time.\n");
+							stats[0] = 0;
+							stats[1] = 0;
+							stats[2] = 0;
+							i = 3;
+						}
+						else if (statPoints1 == 0)
+						{
+							correct = true;
+							i = 3;
+						}	
+							
+					}	
+				}
+
+				printf("\nGreat! So don't forget, you have %d %s points, %d %s points, and %d %s points. Try not to die!\n", stats[0], statName[0], stats[1], statName[1], stats[2], statName[2]);
+
+				puts("\nFinally, you open the door to reveal the battered world of [Terra], ripe with cultural and political conflict,");
+				puts("cancerous rocks that rain from the sky, and magical beasts that can rip countries in half.");
+				enterToContinue();
+				puts("The city you stepped in was steeped in fire and catastrophic proportions of bloodcurling cries. All that touched your ears was gunfire,");
+				puts("explosions, and the screams of the unfortunate.");
+				enterToContinue();
+				puts("No one seems to be around you, and you're left to your own devices, in the middle of an apocalyptic world in explosive turmoil.");
+				enterToContinue();
+				puts("You realize that you're standing in the middle of an open street, skyscrapers and houses around you continue to fall apart as you think about your next move.");
+				puts("What do you decide to do first?:\n");
+
+				puts("1) Walk forward into the streets with caution.");
+				puts("2) Take cover inside a nearby abandoned building.");
+				puts("3) Run as fast as you can to look for someone reliable.");
+				puts("4) Search for a weapon you might need in the future.");
+				puts("5) Lie down and accept the cycle of life.\n");
+
+				while (choiceOfExecution < 1 || choiceOfExecution > 5)
+				{
+					scanf(" %d", &choiceOfExecution);
+					if (choiceOfExecution < 1 || choiceOfExecution > 5 )
+					{
+						puts("Stop running away from your problems, choose wisely next time....\n");
+					}
+				}
+
+				strength = stats[0];
+				agility = stats[1];
+				intelligence = stats[2];
+
+				living = fight(choiceOfExecution, strength, agility, intelligence);
+
+				if(living)
+				{
+					puts("\nFinally, a gateway opens, its lights seeking your touch. The doorknob, although cold, feels soft and inviting, and you open the door,");
+					puts("leading you back to the dark room of 55 doors....");
+					enterToContinue();
+				}
+				else
+				{
+					puts("\nAlthough your body in no more in the world of Terra, you somehow feel sensation yet again. Once again, your body reanimates and you");
+					puts("are back inside the dark room with 55 doors....\n");
+					enterToContinue();
+				}
+
+				
 				break;
 			}
 			case 6:
@@ -624,6 +736,37 @@ while (choice != 0)
 			case 8:
 			{
 				puts("room8");
+				int choice =0;
+				char name[30] = "bob";
+				srand(time(NULL));
+				printf("Pleas enter your name: ");
+				scanf("%s", name);
+				printf("Hello %s welcome to the RPG game!\n", name);
+				while(choice !=99)
+				{
+					 puts("You find yourself in a dark room and you are not sure how you got here.");
+               				 puts("As you look around you see the room has 55 doors, each labeled with a number.");
+               				 puts("The room starts filling with water and you must choose a door to open or you will likely drown. you may quit anytime by selecting option 99.");
+               				 puts("What door do you choose?");
+               				 scanf("%d",&choice);
+
+					 switch(choice)
+					 {
+						case 1:
+						case 2:
+						case 3: 
+						case 4:
+						case 5:
+						exploreRoom8(choice);
+						break;
+						case 99:
+						printf("Exiting the game");
+						break;
+						default:
+						printf("Invalid choice");
+				 	 }
+				}
+
 				break;
 			}
 			case 9:
@@ -847,6 +990,7 @@ while (choice != 0)
 				int x = 0;
 				printf("\n Which path will you take?: \n\n");
 				scanf(" %d",&x);
+printf("");
 				while(x == 1)
 				{
 					printf("\n Gardens \n\n");
@@ -1964,8 +2108,9 @@ while (choice != 0)
 			}
 			case 21:
 			{
-				puts("room21");
-				break;
+                puts("room21");
+                challenge();
+                break;
 			}
 			case 22:
 			{
@@ -2342,7 +2487,59 @@ while (choice != 0)
 			case 25:
 			{
 				puts("room25");
+				
+				int option = 0;
+				//Katy H
+			printf("-----------------------------------------------------------------------------\n");
+				printf("You entered to a different dimension with giant flowers 🌺 and floating platforms,");
+		                printf("suddenly you look down and realize there is a cliff with a pink dragon 🐲 at the bottom");
+			        printf(" ; but in a floating island you see a treasure chest.");		        
+		                 printf("You are scared of falling into the dragon's mouth,however, you see a knight offering some");
+				printf(" help to cross around \n");
+			printf("\n");	
+
+				 printf("Press 1 to accept the knight's help \n");
+				 printf("Press 2 to cross by yourself with the risk of falling \n");
+				 printf("Press 3 to go back and give up \n");
+				 printf("Press 4 to build a bridge with the big flowers \n");
+				 printf("Press 5 to betray the knight 😈 and throw him at the dragon as a distraction in case you fall >:) \n");
+				 
+				 
+				 scanf("%d",&option);
+
+				 if(option == 1)
+				 {
+					 printf("Sorry, he was evil and he used you as food for the dragon :) ☠️ \n");
+				 }
+				 else if(option == 2)
+				 {
+                                     printf("Sorry you fell and died :) ☠️ \n");
+
+				 }
+				 else if(option == 3)
+				 {
+					 printf("you decide to go back :D !\n");
+				 }
+
+				 else if (option == 4)
+				 {
+					 buildB(); 
+					 printf("Sorry ,this isn't minecraft, your skills at construction suck and you fell and died  :) ☠️ \n");
+				 
+				 }
+
+				 else if (option == 5)
+				 {
+					  printf("The dragon eats the knight and you jump to the treasure to realize It's cursed and you die from karma and now you are a ghost :); you decided to go back to the other doors as a ghost ☠️  \n");
+
+				 }
+
+
+
 				break;
+
+
+
 			}
 			case 26:
 			{
@@ -2352,6 +2549,45 @@ while (choice != 0)
 			case 27:
 			{
 				puts("room27");
+				  srand(time(NULL));
+    int choice;
+    int completedChallenges = 0;
+    printf("Welcome hero You must complete 3 challenges\n\nChoose the 1st challenge to complete\n");
+    while (completedChallenges < 3)
+    {
+        printf("1. The Dragon Story\n");
+        printf("2. The dreadfull doors\n");
+        printf("3. George\n");
+        scanf("%d",&choice);
+
+        switch (choice)
+        {
+            case 1:
+                {
+                    colorStory();
+                    completedChallenges++;
+                    break;
+                }
+            case 2:
+                {
+                    easiestChallenge();
+                    completedChallenges++;
+                    break;
+                }
+            case 3:
+                {
+                    numberGuessingChallenge();
+                    completedChallenges++;
+                    break;
+                }
+            default:
+                {
+                    printf("Invalid choice!\n");
+                    break;
+                }
+        }
+    }
+    printf("Challenges completed\n");
 				break;
 			}
 			case 28:
@@ -3999,7 +4235,101 @@ printf("You may now go back to the main room now. GOOD LUCK \n)");
 			}
 			case 46:
 			{
-				puts("room46");
+			    //Diego Espinzoa
+			    int choice2 = 0;
+				//puts("room46");
+				puts("\nYou enter room 46 to find 5 more doors inside.");
+				puts("A metal bar door drops behind you and you are stuck inside room 46.");
+				puts("The water filling the previous room starts filling room 46 and you must quickly \nchoose a door.");
+				puts("What door do you choose?");
+				scanf("%d",&choice2);
+				switch(choice2)
+				{
+				    case 1:
+				    {
+				        puts("\nYou enter room 1 and a metal bar door drops behind you.");
+				        puts("There is text written on one of the walls of the room.");
+				        puts("The text says 'choose a number between 1 and 9'.");
+				        puts("'There is one right number and one wrong number'");
+				        puts("'If you choose the right number, you go free'");
+				        puts("'If you choose the wrong number you lose'");
+				        puts("'Keep choosing a number until you pick the right or wrong one'\n");
+				        
+				        diegoFunction();
+				        break;
+				    }
+				    case 2:
+				    {
+				        int choices[] = {2, 1, 4, 3};
+				        puts("\nYou enter room 2 and a metal bar door drops behind you.");
+				        puts("There is text written on one of the walls of the room.");
+				        puts("The text says 'choose the number in the 2 index spot of the array'.");
+				        for(int i = 0; i < 4;i++)
+                        printf("%d ", choices[i]);
+                        puts("\nWhat number do you choose?");
+                        int chose;
+                        scanf("%d",&chose);
+                        if (chose == choices[2])
+                        {
+                            puts("\nText magically apears on the wall.");
+                            puts("'You chose the right number.'");
+                            puts("You have escaped\n");
+                        }
+                        else
+                        {
+                            puts("\nText magically apears on the wall.");
+                            puts("'You chose the wrong number.'");
+                            puts("game over\n");
+				        }
+				        break;
+				    }
+				    case 3:
+				    {
+				        puts("\nYou enter room 3 and a metal bar door drops behind you.");
+				        puts("There is text written on one of the walls of the room.");
+				        puts("The text says 'What color is space?'.");
+				        puts("What is your answer?");
+				        char answer[10];
+				        scanf("%s",answer);
+				        for(int i = 0; answer[i]; i++)
+				        {
+                            answer[i] = tolower(answer[i]);
+                        }
+                        if (strcmp(answer, "black") == 0)
+                        {
+                            puts("\nTest magically apears on the wall.");
+                            puts("'Answer is correct'");
+                            puts("You have escaped\n");
+                        }
+                        else
+                        {
+                            puts("\nText magically apears on the wall.");
+                            puts("'Wrong answer'.");
+                            puts("game over\n");
+                        }
+				        break;
+				    }
+				    case 4:
+				    {
+				        puts("\nYou enter room 4 and a metal bar door drops behind you.\n");
+				        puts("You hear a voice say,");
+				        puts("'You chose the right door'.");
+				        puts("You have escaped\n");
+				        break;
+				    }
+				    case 5:
+				    {
+				        puts("\nYou enter room 5 and a metal bar door drops behind you.\n");
+				        puts("You hear a voice say,");
+				        puts("'You chose the wrong door'.");
+				        puts("game over\n");
+				        break;
+				    }
+				    default:
+		    	    {
+				        puts("invalid choice");
+			        }
+				}
 				break;
 			}
 			case 47:
@@ -5242,7 +5572,61 @@ void room49()
 }
 
 
+//Katy H , room25 function 
+void buildB()
+{
+        srand(time(NULL));
+  printf("You obtained a random number of stems , petals and roots to build a bridge \n");
+        int stems = rand()%10;
+        int petals = rand()%10;
+        int roots = rand()%10;;
 
+printf("stems: %d \n" ,stems);
+printf("petals: %d \n", petals);
+printf("roots: %d \n", roots);
+
+int materials[] ={2 , 3, 7};
+int numOfmaterials= 0;
+for (int i = 0 ; i <= 3 ; i++ )
+{
+    numOfmaterials =+ materials[i];
+
+    if(i == 0)
+    {
+            numOfmaterials = materials[i];
+    }
+    else if (i==1)
+    {
+            numOfmaterials =+ materials[i];
+    }
+    else if (i==2)
+    {
+            numOfmaterials =+ materials[i];
+            break;
+    }
+
+    else if (i == 3)
+    {
+            break;
+    }
+}
+
+printf("you also got this number of rocks for the bridge: %d \n" ,numOfmaterials);
+
+printf("Now you have the following item : \n");
+printf("POORLY MADE BRIDGE \n");
+printf("\n");
+
+printf("  'x|`\n");
+printf(" |xx|             |x|\n");
+printf(" |xx|    `   '    |x|`\n");
+printf(" |xx|             |x|\n");
+printf("============|===============|\n");
+printf("~|xx|~~~~~~~~~~~~~|x|~~~ ~~~\n");
+
+printf("\n");
+
+}
 
 
 
@@ -7443,5 +7827,580 @@ int i_want_to_go_home_grandpa(){
 }
 
 
+<<<<<<< HEAD
+=======
+void clearBuffer() 
+{
+    while (getchar() != '\n');
+}
+
+void ajlSpace() {
+    while (getchar() != '\n');
+}
+
+void coinFlip() 
+{
+    int call;
+    printf("You know the rules and so do I: call heads {1} or tails {2}: ");
+    scanf("%d", &call);
+    clearBuffer();
+
+    if (call != 1 && call != 2) 
+    {
+        printf("Invalid input. The game will call instead.\n");
+        call = (rand() % 2) + 1;
+    }
+
+    int coin = (rand() % 2) + 1;
+
+    if (coin == call)
+     {
+        printf("You guessed correctly! You get a shiny relic.\n");
+    }
+     else 
+    {
+        printf("You guessed wrong! you get a coin.\n");
+    }
+}
+>>>>>>> c2786008774400c27694df27113a0448ee6fdcee
+
+bool fight(int choose, int strength, int agility, int intelligence)
+{
+	int liveOrDie = 0;
+	bool alive = false;
+
+	switch(choose)
+	{
+		case 1:
+		{
+			puts("\nA sudden warmth washes over your body, and as you look around you see a huge fireball soaring through the sky, aimed directly at you.");
+			puts("You panic, but  decide to...\n");
+
+			puts("1) Run as fast as you can.");
+			puts("2) Embrace death.\n");
+
+			scanf(" %d", &liveOrDie);
+
+			if (liveOrDie == 1 && agility > 15)
+			{
+				puts("Your sudden burst of speed surprises even you, and you somehow tough out the burning embers as your legs carry you to safety.");
+				enterToContinue();
+				puts("Feeling enough energy to continue, you walk around more, gradually seeing more of the city you find yourself in.");
+				enterToContinue();
+				puts("After a few hours, as your legs, weary from running from the chaos, you reach safety.");
+				alive = true;
+				break;
+			}
+			else if (liveOrDie == 2 && strength > 20)
+			{
+				puts("You realize you're much stronger in this world than the last, and tank the fireball, only sustaining minor injuries.");
+				enterToContinue();
+				puts("After feeling your true strength in this world, you continue to walk around, just a little more confident.");
+				enterToContinue();
+				puts("Pushing through the fire and the flames throughout the city, your tenacity surprises you, and you somehow reach safety.");
+				alive = true;
+				break;
+			}
+			else
+			{
+				puts("You can't escape the fireball, and it hits you with the heat of a thousand suns. \nIf God existed in this world, even he could not put you back together.");
+			}
+
+			break;
+		}
+		
+		case 2:
+		{
+			puts("\nYou escape the open streets and hide in a dilapidated building, hoping its ruins will provide sanctuary from the chaos outside.");
+			puts("Suddenly, you hear footsteps, a slight pitter patter that arouses your senses.");
+			enterToContinue();
+			puts("In front of you, just 10 meters ahead, a girl with silver hair and dressed in black and red, smiles and holds up what seems to be a detonator.");
+			puts("You can't help but think that there's nothing she wants from you, but still she smiles as holds the detonator up, what do you do?\n");
+
+			puts("1) Reason out with her and talk her out of blowing up the building.");
+			puts("2) Take a gamble and run from her, hoping she isn't crazy enough to blow both of you up.\n");
+
+			scanf(" %d", &liveOrDie);
+
+			if (liveOrDie == 1 && intelligence > 30)
+			{
+				puts("You speak to her, trying to buy time while also gaining information. After realizing you aren't who she is looking for, she lets you go,"); 
+				puts("clicking her tongue in the meanwhile.");
+				enterToContinue();
+				puts("After she leaves, you immediately flee from the building, realizing it's rigged with explosives, and walk further into the distance to find sanctuary.");
+				enterToContinue();
+				puts("You're intuition saves you, and as you create distance from the intial confrontation, you find your way to safety.");
+				alive = true;
+				break;
+			}
+			else if (liveOrDie == 2 && strength == 20 && agility == 30)
+			{
+				puts("As you turn your back to run away, shockwaves from explosions from every direction bombard your body. She pressed the detonator, but");
+				puts("your trust in your own strength and speed don't betray you. After barely making it out of the building, you find that that silver haired");
+				puts("girl is nowhere to be seen, and take your time finding someplace safer.");
+				enterToContinue();
+				puts("You put your newfound physical abilities to work and push through the rubble and debris scattered around the city, exhaustion soon setting in.");
+				enterToContinue();
+				puts("As you carry your body forward, not knowing exactly where you're going, you somehow find safety.");
+				alive = true;
+				break;
+			}
+			else
+			{
+				puts("The moment you turn your back to run away, your ears catch shockwaves from every direction, the pillars of the building you stand in,");
+				puts("magnificently to the symphony of explosions. The girl stands there, laughing, before she jumps away like a superhuman, leaving you to");
+				puts("die a crispy death.");
+			}
+
+			break;
+
+		}
+		
+		case 3:
+		{
+			puts("\nYou take a moment to scan your surroundings, but then run as fast as you can in one direction, surely this city you're in has some reliable");
+			puts("people. Still, you can't rest without finding safety, and finally after what seems like hours of running in circles, you come across a black figure.");
+			enterToContinue();
+			puts("As you get closer, you realize that it's a man in a black hoodie, and there are other people behind him, all gesturing to each other.");
+			puts("However, the moment they see you, they immediately bring up their guns, point it directly at you, and question you, cautious of your intentions.");
+			puts("'Are you with the Reunion Movement?'\n");
+
+			puts("1) Tell the truth and hope they won't hurt you.");
+			puts("2) Lie and act as if you are a part of the movement.\n");
+
+			scanf(" %d", &liveOrDie);
+
+			if (liveOrDie == 1)
+			{
+				puts("Hearing you speak your peace, they retract their guns. Knowing you aren't a part of the Reunion Movement that started the break out of Infected");
+				puts("Militia, they decide to guide you through the city to safety. Their group name, [Rhodes Island], puts you at ease.");
+				enterToContinue();
+				puts("Their leaders speak with conviction and hold their heads high. Even in this god-forsaken world, they look to the sky with a childlike innocence");
+				puts("that belies their true strength.");
+				enterToContinue();
+				puts("As you follow them through the streets, one of their leaders, the Doctor, turns around to speak to you directly — his hooded figure clad in black makes your stomach turn.");
+				puts("'You are not from this world. I bid you farewell as you return to where you came from....");
+				enterToContinue();
+				puts("Suddenly, he points to the right, his hand leading the way to safety.");
+				alive = true;
+				break;
+			}
+			else if (liveOrDie == 2 && intelligence > 10)
+			{
+				puts("Without another word, they give the order and a woman wielding a huge chainsaw jumps from behind, soaring through the sky and landing on your back.");
+				puts("It seems that the Reunion are not their friends, but seeing that they didn't immediately shoot you, you decide to gamble again and finally tell the truth.");
+				enterToContinue();
+				puts("Although they don't doubt your words, they also make it known that further lies will only end up all the worse for you. Still, they decide you aren't");
+				puts("a threat and guide you to safety, their group name, [Rhodes Island], giving you a certain warmth.");
+				enterToContinue();
+				puts("After a tense meeting, their two leaders, Amiya and the Doctor, lead you to an alleyway, the safety you so desperately wanted.");
+				alive = true;
+				break;
+			}
+			else
+			{
+				puts("Seeing as they don't take kindly to you, you decide to run away, but a huge behemoth of a man blocks your way. His body, shaped by countless battles,");
+				puts("puts the fear of God into you, and you try to steal a gun off the floor.");
+				puts("'Ace, stop playing around.'");
+				puts("You instantly fall to the floor, not knowing what happened, but only seeing red....");
+			}
+
+			break;
 
 
+		}
+
+		case 4:
+		{
+			puts("You find a gun, worn down and all the more alien to you than the world you were in. Still, it can't be a bad thing can it?");
+			enterToContinue();
+			puts("Walking around the area, you find a group of people with horns on their heads, bathing in the fire around the city. It seems like they");
+			puts("reveled in the destruction, and you think to yourself, maybe they are the source of this chaos.");
+			enterToContinue();
+			puts("Seeing the gun in your hands and the broken state of the city, you think about your next move.");
+			puts("Will you rise to the challenge and be the spear that illuminates the land, or will you cower and fend only for yourself?\n");
+
+			puts("1) Walk slowly and carefully, and distance yourself from the group.");
+			puts("2) Take justice along the hand and confront the evildoers yourself.\n");
+
+			scanf(" %d", &liveOrDie);
+
+			if (liveOrDie == 1 && agility > 15 && intelligence > 15)
+			{
+				puts("Knowing the situation is way out of your control, you decide to try to live another day. Only a fool would challenge");
+				puts("those psychopaths. Weaving in and out of the buildings, you escape their gaze and finally make it out safely.");
+				alive = true;
+				break;
+			}
+			else
+			{
+				puts("The moment they see you, your body begins to burn hot, and you start to run away as if the sun was chasing you.");
+				enterToContinue();
+				puts("Your legs stop working, and you trip, your back thumping against the floor. All you can see in front of you is a single woman.");
+				puts("Wrapped in red and black, her robes disguised a long sword, the flames around her englufing her weapon and her entire being.");
+				enterToContinue();
+				puts("You can feel her pitying you as her eyes stare daggers into your soul, her glare sharp with a ferocity unmatched.");
+				puts("Your body burns to a crisp as your ashes fall to the wind, carrying it as far into the sky as it could, not a single memory of yours etched into the world.");
+			}
+
+			break;
+		}
+
+		case 5:
+		{
+			puts("You lie down, the cold hard ground making itself a bed for your soul. Even though the sky around is lit in fire and bathed in the cries of the");
+			puts("unfortunate, the chaos suits you. You wouldn't mind dying in a place like this.");
+			enterToContinue();
+			
+			break;
+		}
+	}
+
+	return alive;
+}
+
+
+void enterToContinue()
+{
+	char discard;
+	char input;
+
+	while ((discard = getchar()) != EOF && discard != '\n') {}
+
+	while (1)
+	{
+		printf("Press enter to continue.\n");
+		input = getchar();
+		if (input == '\n')
+		{
+			break;
+		}
+	}
+}
+
+
+
+void exploreRoom8(int roomNumber) {
+    printf("\nEntering room %d\n", roomNumber);
+    int action;
+
+    switch (roomNumber) {
+        case 1:
+            printf("You enter a room filled with exotic birds.\n");
+            printf("Choose your action: 1. Feed them, 2. Observe them, 3. Catch one, 4. Sing to them, 5. Leave quietly\n");
+            scanf("%d", &action);
+            switch (action) {
+                case 1:
+                    printf("The birds flock to you, leaving behind a shiny key!\n");
+                    break;
+                case 2:
+                    printf("You enjoy the peaceful moment and feel rejuvenated!\n");
+                    break;
+                case 3:
+                    printf("The birds scatter and you leave empty-handed.\n");
+                    break;
+                case 4:
+                    printf("They sing back, revealing a hidden passage!\n");
+                    break;
+                case 5:
+                    printf("You leave the room as you found it.\n");
+                    break;
+            }
+            break;
+        case 2:
+            printf("You enter a chamber of mirrors.\n");
+            printf("Choose your action: 1. Look into a mirror, 2. Break a mirror, 3. Rearrange the mirrors, 4. Search behind the mirrors, 5. Leave immediately\n");
+            scanf("%d", &action);
+            switch (action) {
+                case 1:
+                    printf("You see your future and gain wisdom!\n");
+                    break;
+                case 2:
+                    printf("A spirit is released, cursing you!\n");
+                    break;
+                case 3:
+                    printf("The light reflects to show a hidden door!\n");
+                    break;
+                case 4:
+                    printf("You find a hidden treasure chest!\n");
+                    break;
+                case 5:
+                    printf("You feel a chill as you quickly exit.\n");
+                    break;
+            }
+            break;
+        case 3:
+            printf("You find yourself in a room with a giant chessboard.\n");
+            printf("Choose your action: 1. Play a game, 2. Move a knight, 3. Sit and think, 4. Rearrange the pieces, 5. Leave the board\n");
+            scanf("%d", &action);
+            switch (action) {
+                case 1:
+                    printf("You outsmart the magical opponent and win a crown!\n");
+                    break;
+                case 2:
+                    printf("Moving the knight opens a secret drawer with a map!\n");
+                    break;
+                case 3:
+                    printf("You contemplate deeply, gaining insight!\n");
+                    break;
+                case 4:
+                    printf("Rearranging the pieces triggers a trapdoor!\n");
+                    break;
+                case 5:
+                    printf("You step away from the game, unchanged.\n");
+                    break;
+            }
+            break;
+        case 4:
+            printf("You enter a dimly lit laboratory.\n");
+            printf("Choose your action: 1. Mix potions, 2. Read the notes, 3. Use the microscope, 4. Ignite the Bunsen burner, 5. Leave quietly\n");
+            scanf("%d", &action);
+            switch (action) {
+                case 1:
+                    printf("You create a healing potion!\n");
+                    break;
+                case 2:
+                    printf("You learn a secret of the philosopher's stone!\n");
+                    break;
+                case 3:
+                    printf("You discover a new bacteria!\n");
+                    break;
+                case 4:
+                    printf("The flame reveals a hidden safe!\n");
+                    break;
+                case 5:
+                    printf("You leave the lab untouched.\n");
+                    break;
+            }
+            break;
+        case 5:
+            printf("You enter a serene garden.\n");
+            printf("Choose your action: 1. Water the plants, 2. Rest by the fountain, 3. Pick a flower, 4. Meditate, 5. Walk along the path\n");
+            scanf("%d", &action);
+            switch (action) {
+                case 1:
+                    printf("The plants grow instantly, revealing a key!\n");
+                    break;
+                case 2:
+                    printf("The soothing water restores your health!\n");
+                    break;
+                case 3:
+                    printf("You find a rare and valuable blossom!\n");
+                    break;
+                case 4:
+                    printf("Meditation enlightens you, boosting your wisdom!\n");
+                    break;
+                case 5:
+                    printf("The path leads you to a hidden gate!\n");
+                    break;
+            }
+            break;
+    }
+}
+
+
+void challenge()
+{
+
+    char options[][20] = { "Ogre", "Golem", "Lich", "Penguin", "Snake" };
+
+    srand(time(NULL));
+    int randy = rand() % 3;
+
+    int n = 7;
+
+    printf("Welcome you have been left unarmed at the begining of a series of chambers and must make it to the end while avoiding the evil creatures.\n");
+
+
+
+    for (int i = 0; i < 2; i++)
+    {
+
+        randy = rand() % 3;
+
+        printf("So please make your choice between rooms 1-5: \n");
+        scanf("%d", &n);
+
+        if (randy % 3 != 0)
+        {
+            printf("You have escaped unnoticed by the %s\n", options[n - 1]);
+
+        }
+        else
+        {
+            printf("You were mauled to death by %s and respawned at the begining\n", options[n - 1]);
+            i = -1;
+        }
+
+    }
+    printf("Congratulations you have made it out of the room\n");
+
+}
+
+void colorStory()
+{
+    printf("Rules of this challenge 1 for red, 2 for blue, 3 for yellow and you must answer all 3 of the questions to pass \n");
+    int color1 = rand() % 3;
+    int color2 = rand() % 3;
+    int color3 = rand() % 3;
+    printf("Once upon a time, there was a ");
+    if (color1 == 1)
+        printf("red ");
+    else if (color1 == 2)
+        printf("blue ");
+    else
+        printf("yellow ");
+    printf("dragon. It flew across the ");
+    if (color2 == 1)
+    {
+        printf("red ");
+    }
+    else if (color2 == 2)
+    {
+        printf("blue ");
+    }
+    else
+    {
+        printf("yellow ");
+    }
+    printf("sky. And breathed ");
+    if (color3 == 1)
+    {
+        printf("red ");
+    }
+    else if (color3 == 2)
+    {
+        printf("blue ");
+    }
+    else
+    {
+        printf("yellow ");
+    }
+    printf("fire to incinerate its enemies.\n");
+    int guess1, guess2, guess3;
+    printf("What color was the dragon?:\n ");
+    scanf("%d",&guess1);
+    if(guess1 != color1)
+    {
+        printf("Bruh \nnext challenge \n");
+        return;
+    }
+    printf("What color was the sky?: ");
+    scanf("%d",&guess2);
+    if(guess2 != color2)
+    {
+        printf("Bruh \nnext challenge \n");
+        return;
+    }
+    printf("What color was the dragon's breath?: ");
+    scanf("%d",&guess3);
+    if(guess3 != color3)
+    {
+        printf("Bruh \nnext challenge \n");
+        return;
+    }
+    printf("Congratulations! You guessed all the colors correctly.\nChallenge completed\n");
+}
+
+void easiestChallenge()
+{
+    printf("Welcome to the Dreadfull Door challenge, hero these are the rules 1 for red and 2 for blue you have 3 tries\n");
+    int correctChoice = 1;
+    int remainingTries = 3;
+    int choice;
+    while (remainingTries > 0)
+    {
+        printf("Go through the red door\n");
+        printf("Enter your choice: ");
+        scanf("%d",&choice);
+        if (choice == correctChoice)
+        {
+            printf("Congratulations You win!\nChallenge complete\n");
+            return;
+        }
+        else
+        {
+            if (remainingTries == 3)
+                printf("Ok here we go through the red door.\nYou have 2 more tries left.\n");
+            else if (remainingTries == 2)
+                printf("Bruh Go through the God**** RED door!!!\n You have 1 more try left.\n");
+            else
+            printf("Bruh\nnext challenge \n");
+            remainingTries--;
+        }
+    }
+}
+
+void numberGuessingChallenge()
+{
+    printf("In this  challenge you must guess the numbers George is thinking and at least get 1 point you have 3 tries\n");
+    srand(time(NULL));
+    int randomNumber = rand() % 5;
+    int score[3] = {0};
+    for (int i = 0; i < 3; i++)
+    {
+        int guess;
+        printf("George:Guess the number between 1 and 5: ");
+        scanf("%d",&guess);
+        if (guess == randomNumber)
+        {
+            printf("George:You get a point\n");
+            score[i] = 1;
+            randomNumber = rand() % 5;
+        }
+        else
+        {
+            printf("George:Wrong guess.\n");
+        }
+    }
+    int totalScore = score[0] + score[1] + score[2];
+    if (totalScore < 1)
+    {
+        printf("George:you lose, you're a loser\n");
+    }
+    else
+    {
+        printf("George:Nice you won your total score is: %d\n", totalScore);
+    }
+}
+
+void diegoFunction()
+{
+    srand(time(NULL)); 
+    int right = rand()%9 +1;
+    int wrong = rand()%9 +1;
+    int guess = 0;
+    while (right == wrong)
+    {
+        wrong = wrong + rand()%3 +(-1);
+        if (wrong == 0)
+        {
+            wrong++;
+        }
+        else if(wrong==10)
+        {
+            wrong--;
+        }
+    }
+    
+    puts("Choose a number between 1-9");
+    scanf("%d",&guess);
+    while (guess != right && guess != wrong)
+    {
+        puts("Nothing happens, choose again");
+        scanf("%d",&guess);
+    }
+    
+    if(guess == right)
+    {
+        puts("\nText magically apears on the wall.");
+        puts("'You chose the right number.'");
+        puts("You have escaped\n");
+    }
+    else
+    {
+        puts("\nText magically apears on the wall.");
+        puts("'You chose the wrong number'.");
+        puts("game over\n");
+    }
+}
